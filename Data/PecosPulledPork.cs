@@ -5,10 +5,11 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A class representing the Angry Chicken entree
+    /// A class representing the Pecos Pulled Pork entree
     /// </summary>
-    public class AngryChicken
+    public class PecosPulledPork
     {
+
         /// <summary>
         /// The price of the entree
         /// </summary>
@@ -16,9 +17,8 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 5.99;
+                return 5.88;
             }
-                       
         }
 
         /// <summary>
@@ -28,24 +28,19 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 190;
+                return 528;
             }
         }
 
-        private bool pickle = true;
-
-        /// <summary>
-        /// If the entree should be served with a pickle
-        /// </summary>
-        public bool Pickle
-        {
-            get { return pickle; }
-            set { pickle = value; }
-        }
         /// <summary>
         /// If the entree should be served with bread
         /// </summary>
-        public bool Bread { get; set; } = true; // auto property format
+        public bool Bread { get; set; } = true;
+
+        /// <summary>
+        /// If the entree should be served with pickle
+        /// </summary>
+        public bool Pickle { get; set; } = true;
 
         /// <summary>
         /// A list of the special instructions
@@ -62,5 +57,6 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
     }
 }
