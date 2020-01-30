@@ -4,10 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    /// <summary>
-    /// A class representing the Trailburger entree
-    /// </summary>
-    public class TrailBurger
+    public class DakotaDoubleBurger
     {
 
         /// <summary>
@@ -17,7 +14,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 4.50;
+                return 5.20;
             }
 
         }
@@ -29,9 +26,24 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 288;
+                return 464;
             }
         }
+
+        /// <summary>
+        /// If the entree should have tomatos
+        /// </summary>
+        public bool Tomato { get; set; } = true;
+
+        /// <summary>
+        /// If the entree should have lettuce
+        /// </summary>
+        public bool Lettuce { get; set; } = true;
+
+        /// <summary>
+        /// If the entree should have mayo
+        /// </summary>
+        public bool Mayo { get; set; } = true;
 
         /// <summary>
         /// If the entree should have a bun
@@ -60,21 +72,25 @@ namespace CowboyCafe.Data
         /// <summary>
         /// A list of the special instructions
         /// </summary>
+
         public List<string> SpecialInstructions
         {
             get
             {
                 List<string> instructions = new List<string>();
 
+                if (!Tomato) { instructions.Add("hold tomato"); }
+                if (!Lettuce) { instructions.Add("hold lettuce"); }
+                if (!Mayo) { instructions.Add("hold mayo"); }
                 if (!Bun) { instructions.Add("hold bun"); }
                 if (!Ketchup) { instructions.Add("hold ketchup"); }
                 if (!Mustard) { instructions.Add("hold mustard"); }
                 if (!Pickle) { instructions.Add("hold pickle"); }
                 if (!Cheese) { instructions.Add("hold cheese"); }
-
                 return instructions;
             }
         }
+
 
     }
 }
