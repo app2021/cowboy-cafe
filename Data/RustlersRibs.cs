@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: RustlersRibs
+ * Purpose: A class for the Rustlers Ribs entree
+ */ 
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -32,7 +38,9 @@ namespace CowboyCafe.Data
 
         }
 
-        // An empty list of the Special Instructions
+        /// <summary>
+        /// An empty list of the Special Instructions
+        /// </summary>
         public override List<string> SpecialInstructions
         {
             get

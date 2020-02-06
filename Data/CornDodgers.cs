@@ -1,12 +1,23 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: AngryChicken.cs
+ * Purpose: A class representing the Corn Dodgers side
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class representing the Corn Dogers side
+    /// </summary>
     public class CornDodgers: Side
     {
-
+        /// <summary>
+        /// The calories of the side
+        /// </summary>
         public override uint Calories
         {
 
@@ -27,6 +38,9 @@ namespace CowboyCafe.Data
 
         }
 
+        /// <summary>
+        /// The price of the side
+        /// </summary>
         public override double Price
         {
             get

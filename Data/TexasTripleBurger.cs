@@ -1,9 +1,18 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: TexasTripleBurger
+ * Purpose: A class representing the Texas Triple Burger
+ */ 
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class representing the Texas Triple Burger
+    /// </summary>
     public class TexasTripleBurger: Entree
     {
 
@@ -79,6 +88,8 @@ namespace CowboyCafe.Data
         /// If the entree should have cheese
         /// </summary>
         public bool Cheese { get; set; } = true;
+        
+        
         /// <summary>
         /// A list of the special instructions
         /// </summary>

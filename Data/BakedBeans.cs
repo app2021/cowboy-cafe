@@ -1,11 +1,23 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: BakedBeans.cs
+ * Purpose: A class representing the Baked Beans side
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class representing the Baked Beans side
+    /// </summary>
     public class BakedBeans: Side
     {
+        /// <summary>
+        /// The calories of the side
+        /// </summary>
         public override uint Calories
         {
 
@@ -25,6 +37,10 @@ namespace CowboyCafe.Data
             }
 
         }
+
+        /// <summary>
+        /// The price of the side
+        /// </summary>
 
         public override double Price
         {

@@ -1,9 +1,20 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: DakotaDoubleBurger.cs
+ * Purpose: A class representing the Dakota Double Burger entree
+ */ 
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+
+    /// <summary>
+    /// A class representing the Dakota Double Burger entree
+    /// </summary>
+
     public class DakotaDoubleBurger: Entree
     {
 

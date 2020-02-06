@@ -1,11 +1,23 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: ChiliCheeseFries.cs
+ * Purpose: A class representing the Chili Cheese Fries
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class representing the Chili Cheese Fries
+    /// </summary>
     public class ChiliCheeseFries : Side
     {
+        /// <summary>
+        /// The calories of the side
+        /// </summary>
         public override uint Calories
         {
 
@@ -26,6 +38,9 @@ namespace CowboyCafe.Data
 
         }
 
+        /// <summary>
+        /// The price of the side
+        /// </summary>
         public override double Price
         {
             get

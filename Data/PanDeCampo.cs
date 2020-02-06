@@ -1,11 +1,23 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: PanDeCampo.cs
+ * Purpose: A class for the Pan De Campo side
+ */ 
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class for the Pan De Campo side
+    /// </summary>
     public class PanDeCampo: Side
     {
+        /// <summary>
+        /// The calories of the side
+        /// </summary>
         public override uint Calories
         {
 
@@ -25,6 +37,10 @@ namespace CowboyCafe.Data
             }
 
         }
+
+        /// <summary>
+        /// The price of the side
+        /// </summary>
 
         public override double Price
         {

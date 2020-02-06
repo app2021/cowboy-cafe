@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: AngryChicken.cs
+ * Purpose: A class representing the Angry Chicken entree
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
