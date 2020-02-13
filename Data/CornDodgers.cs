@@ -1,6 +1,6 @@
 ﻿/*
  * Author: Nickolas Appino
- * Class: AngryChicken.cs
+ * Class: CornDogers.cs
  * Purpose: A class representing the Corn Dodgers side
  */
 

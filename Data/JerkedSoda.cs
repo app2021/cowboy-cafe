@@ -1,11 +1,23 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: JerkedSoda.cs
+ * Purpose: A class representing Jerked Soda
+ */ 
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class representing Jerked Soda
+    /// </summary>
     public class JerkedSoda : Drink
     {
+        /// <summary>
+        /// The price of the soda
+        /// </summary>
         public override double Price
         {
             get
@@ -24,6 +36,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// The calories of the soda
+        /// </summary>
         public override uint Calories
         {
             get
@@ -42,13 +57,25 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// The flavor of the soda
+        /// </summary>
         public SodaFlavor Flavor { get; set; }
 
+        /// <summary>
+        /// Special instructions for the soda
+        /// </summary>
         public override List<string> SpecialInstructions
         {
             get
             {
+           
+                    List<string> instructions = new List<string>();
 
+                    if (!Ice) { instructions.Add("Hold Ice"); }
+
+                    return instructions;
+                
             }
         }
     }
