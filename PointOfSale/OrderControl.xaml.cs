@@ -25,7 +25,10 @@ namespace PointOfSale
             AddCowpokeChiliButton.Click += OnAddCowpokeChiliButtonClicked;
             AddRustlersRibsButton.Click += OnAddRustlersRibsButtonClicked;
             AddPecosPulledPorkButton.Click += OnAddPecosPulledPorkButtonClicked;
-
+            AddTrailBurgerButton.Click += OnAddTrailBurgerButtonClicked;
+            AddDakotaDoubleBurgerButton.Click += OnAddDakotaDoubleBurgerButtonClicked;
+            AddTexasTripleBurgerButton.Click += OnAddTexasTripleBurgerButtonClicked;
+            AddAngryChickenButton.Click += OnAddAngryChickenButtonClicked;
         }
 
         void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
@@ -43,9 +46,25 @@ namespace PointOfSale
             OrderListView.Items.Add(new PecosPulledPork());
         }
 
-
+        void OnAddTrailBurgerButtonClicked(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new TrailBurger());
+        }
        
+        void OnAddDakotaDoubleBurgerButtonClicked(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new DakotaDoubleBurger());
+        }
 
+        void OnAddTexasTripleBurgerButtonClicked(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new TexasTripleBurger());
+        }
+
+        void OnAddAngryChickenButtonClicked(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new AngryChicken());
+        }
 
 
     }
