@@ -100,5 +100,21 @@ namespace CowboyCafe.Data
 
             }
         }
+
+        /// <summary>
+        /// Returns the string representation of this object
+        /// </summary>
+        /// <returns>The string describing the item</returns>
+        public override string ToString()
+        {
+            if(Sweet)
+            {
+                return Size + " Texas Sweet Tea";
+            }
+            else
+            {
+                return Size + " Texas Plain Tea";
+            }
+        }
     }
 }

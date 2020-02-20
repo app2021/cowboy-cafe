@@ -91,5 +91,21 @@ namespace CowboyCafe.Data
                 
             }
         }
+
+        /// <summary>
+        /// Returns the string representation of this object
+        /// </summary>
+        /// <returns>The string describing the item</returns>
+        public override string ToString()
+        {
+            if (Decaf)
+            {
+                return Size + " Decaf Cowboy Coffee";
+            }
+            else
+            {
+                return Size + " Cowboy Coffee";
+            }
+        }
     }
 }

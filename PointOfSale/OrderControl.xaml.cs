@@ -35,8 +35,34 @@ namespace PointOfSale
             AddPanDeCampoButton.Click += OnPanDeCampoButtonClicked;
             AddBakedBeansButton.Click += OnAddBakedBeansButtonClicked;
 
+            AddJerkedSodaButton.Click += OnAddJerkedSodaButtonClicked;
+            AddTexasTeaButton.Click += OnAddTexasTeaButtonClicked;
+            AddCowboyCoffeeButton.Click += OnAddCowboyCoffeeButtonClicked;
+            AddWaterButton.Click += OnAddWaterButtonClicked;
+
+
+
         }
 
+        void OnAddWaterButtonClicked(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new Water());
+        }
+
+        void OnAddCowboyCoffeeButtonClicked(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new CowboyCoffee());
+        }
+
+        void OnAddTexasTeaButtonClicked(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new TexasTea());
+        }
+
+        void OnAddJerkedSodaButtonClicked(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new JerkedSoda());
+        }
 
         void OnAddBakedBeansButtonClicked(object sender, RoutedEventArgs e)
         {
