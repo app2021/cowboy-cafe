@@ -59,7 +59,12 @@ namespace CowboyCafe.Data
             }
         }
 
-       // public override Size Size { get; set; }
+        public override string ToString()
+        {
+            return Size + " Chili Cheese Fries";
+        }
+
+        // public override Size Size { get; set; }
 
     }
 }

@@ -29,6 +29,33 @@ namespace PointOfSale
             AddDakotaDoubleBurgerButton.Click += OnAddDakotaDoubleBurgerButtonClicked;
             AddTexasTripleBurgerButton.Click += OnAddTexasTripleBurgerButtonClicked;
             AddAngryChickenButton.Click += OnAddAngryChickenButtonClicked;
+
+            AddChiliCheeseFriesButton.Click += OnAddChiliCheeseFriesButtonClicked;
+            AddCornDodgersButton.Click += OnAddCornDogersButtonClicked;
+            AddPanDeCampoButton.Click += OnPanDeCampoButtonClicked;
+            AddBakedBeansButton.Click += OnAddBakedBeansButtonClicked;
+
+        }
+
+
+        void OnAddBakedBeansButtonClicked(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new BakedBeans());
+        }
+
+        void OnPanDeCampoButtonClicked(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new PanDeCampo());
+        }
+
+        void OnAddCornDogersButtonClicked (object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new CornDodgers());
+        }
+
+        void OnAddChiliCheeseFriesButtonClicked(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new ChiliCheeseFries());
         }
 
         void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
