@@ -12,7 +12,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of this order item
         /// </summary>
-        double Price { get; }
+        public double Price { get; }
 
         /// <summary>
         /// The special instructions for this IOrderItem

@@ -68,5 +68,8 @@ namespace CowboyCafe.Data
         {
             return Size + " Baked Beans";
         }
+
+        public override List<string> SpecialInstructions { get; }
+
     }
 }
