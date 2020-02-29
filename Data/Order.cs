@@ -8,25 +8,24 @@ namespace CowboyCafe.Data
     public class Order: INotifyPropertyChanged
     {
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
         private static uint lastOrderNumber = 0;
 
         public List<IOrderItem> items = new List<IOrderItem>();
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public IEnumerable<IOrderItem> Items => items.ToArray();
 
 
-        private double subtotal;
+        public List<double> itemsPrice = new List<double>();
+        public IEnumerable<double> ItemsPrice => itemsPrice.ToArray();
 
-        public double Subtotal { 
-            
-            get
-            {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("subtotal"));
-                return subtotal;
-            }
-                 }
+
+
+        public double Subtotal { get; private set; }
+
+
 
         public uint OrderNumber {
             get
@@ -38,8 +37,14 @@ namespace CowboyCafe.Data
         public void Add(IOrderItem item) {
 
             items.Add(item);
+            itemsPrice.Add(item.Price);
+
+            Subtotal += item.Price;
+
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            subtotal += item.Price;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+
+
 
         }
 
@@ -47,12 +52,13 @@ namespace CowboyCafe.Data
 
             items.Remove(item);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            subtotal -= item.Price;
+            Subtotal -= item.Price;
         }
 
         public Order()
         {
             lastOrderNumber++;
+
         }
 
     }

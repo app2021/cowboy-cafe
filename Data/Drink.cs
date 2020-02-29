@@ -23,7 +23,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the drink
         /// </summary>
-        public abstract double Price { get; }
+        //public abstract double Price { get; }
 
         /// <summary>
         /// The calories of the drink
@@ -33,7 +33,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the drink
         /// </summary>
-        public abstract List<string> SpecialInstructions { get; }
+        //public abstract List<string> SpecialInstructions { get; }
 
         /// <summary>
         /// If the drink should have ice

@@ -22,6 +22,8 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
+
+            /*
             AddCowpokeChiliButton.Click += OnAddCowpokeChiliButtonClicked;
             AddRustlersRibsButton.Click += OnAddRustlersRibsButtonClicked;
             AddPecosPulledPorkButton.Click += OnAddPecosPulledPorkButtonClicked;
@@ -40,13 +42,16 @@ namespace PointOfSale
             AddCowboyCoffeeButton.Click += OnAddCowboyCoffeeButtonClicked;
             AddWaterButton.Click += OnAddWaterButtonClicked;
 
-
+            */
 
         }
-
+        /*
         void OnAddWaterButtonClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new Water());
+            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
+            {
+                data.Add(new Water());
+            }
         }
 
         void OnAddCowboyCoffeeButtonClicked(object sender, RoutedEventArgs e)
@@ -118,7 +123,7 @@ namespace PointOfSale
         {
             OrderListView.Items.Add(new AngryChicken());
         }
-
+        */
 
     }
 }

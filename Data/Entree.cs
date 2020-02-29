@@ -19,7 +19,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Gets the price of the entree
         /// </summary>
-        public abstract double Price { get; }
+        //public abstract double Price { get; }
 
         /// <summary>
         /// Gets the calories of the entree
@@ -29,7 +29,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Gets the Special Instructions of the entree
         /// </summary>
-        public abstract List<string> SpecialInstructions { get; }
+        //public abstract List<string> SpecialInstructions { get; }
 
 
     }

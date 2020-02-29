@@ -10,7 +10,7 @@ namespace CowboyCafe.DataTests
 {
     class MockOrderItem : IOrderItem
     {
-        public double Price { get; set; }
+        public new double Price { get; set; }
         public List<string> SpecialInstructions { get; set; }
 
     }

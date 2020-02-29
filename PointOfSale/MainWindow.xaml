@@ -9,10 +9,9 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <local:OrderControl Grid.Column="0"></local:OrderControl>
+        <local:MenuItemSelectionControl Grid.Column="0"></local:MenuItemSelectionControl>
         <local:OrderSummaryControl Grid.Column="1"></local:OrderSummaryControl>
     </Grid>
 </Window>
