@@ -43,6 +43,8 @@ namespace CowboyCafe.Data
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ItemsPrice"));
+
 
 
 

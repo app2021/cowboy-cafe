@@ -6,10 +6,18 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <Grid>
-        <StackPanel>
-            <TextBlock>Shopping List</TextBlock>
-            <ListBox ItemsSource="{Binding Path=Items}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ListBox Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Path=Items}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -19,14 +27,21 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <ListBox>
-                <TextBlock Text="{Binding Path=Subtotal, StringFormat=c}"/>
-                <TextBlock Text="{Binding Path=Items.Price}"/>
+        <ListBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Path=ItemsPrice, StringFormat=c}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                        <TextBlock Text="{Binding}"/>
+                    </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+          </ListBox>
+         <ListBox Grid.Row="1">
+            <TextBlock>Subtotal: </TextBlock>
+            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Path=Subtotal, StringFormat=c}"/>
+         </ListBox>
 
-            </ListBox>
-            <TextBox Text=""/>
 
-        </StackPanel>
 
     </Grid>
 </UserControl>
