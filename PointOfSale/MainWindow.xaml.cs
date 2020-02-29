@@ -1,4 +1,10 @@
-﻿using CowboyCafe.Data;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: MainWindow.xaml.cs
+ * Purpose: Interaction logic for MainWindow.xaml
+ */ 
+
+using CowboyCafe.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +27,9 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Interaction logic for MainWindow.xaml
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -32,11 +41,21 @@ namespace PointOfSale
             CompleteOrderButton.Click += OnCompleteOrderButtonClicked;
         }
 
+        /// <summary>
+        /// When Cancel Order button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void OnCancelOrderButtonClicked(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
         }
 
+        /// <summary>
+        /// When Complete Order button is clicked 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void OnCompleteOrderButtonClicked(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();

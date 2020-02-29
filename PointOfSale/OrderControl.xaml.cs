@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: OrderControl.xaml.cs
+ * Purpose: Currently unused 
+ */ 
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
