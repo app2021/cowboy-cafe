@@ -37,16 +37,6 @@ namespace CowboyCafe.Data
         /// </summary>
         public IEnumerable<IOrderItem> Items => items.ToArray();
 
-        /// <summary>
-        /// Keeps track of all the items individual prices
-        /// </summary>
-        public List<double> itemsPrice = new List<double>();
-
-        /// <summary>
-        /// Provides an array of all items ordered individual prices
-        /// </summary>
-        public IEnumerable<double> ItemsPrice => itemsPrice.ToArray();
-
 
         /// <summary>
         /// The subtotal of the order
@@ -70,13 +60,12 @@ namespace CowboyCafe.Data
         public void Add(IOrderItem item) {
 
             items.Add(item);
-            itemsPrice.Add(item.Price);
 
             Subtotal += item.Price;
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ItemsPrice"));
+
 
 
 

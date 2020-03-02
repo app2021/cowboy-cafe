@@ -8,10 +8,6 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height ="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -21,26 +17,22 @@
             <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
-                            <TextBlock Text="{Binding}"/>
-
-                        </Grid>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        <ListBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Path=ItemsPrice, StringFormat=c}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                        <TextBlock Text="{Binding}"/>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" TextAlignment="Left"  Text="{Binding}"/>
+                        <TextBlock Grid.Column="1" TextAlignment="Right" Text ="{Binding Path= Price}"/>
                     </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-          </ListBox>
+            </ListBox>
+
          <ListBox Grid.Row="1">
             <TextBlock>Subtotal: </TextBlock>
-            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Path=Subtotal, StringFormat=c}"/>
+            <TextBlock Grid.Row="1" Text="{Binding Path=Subtotal, StringFormat=c}"/>
             <TextBlock>Order #:</TextBlock>
-            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Path=OrderNumber}"/>
+            <TextBlock Grid.Row="1" Text="{Binding Path=OrderNumber}"/>
         </ListBox>
 
 

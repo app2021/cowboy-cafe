@@ -29,7 +29,7 @@ namespace PointOfSale
         {
             InitializeComponent();
             var data = new Order();
-            DataContext = data;
+            this.DataContext = data;
 
             CancelOrderButton.Click += OnCancelOrderButtonClicked;
             CompleteOrderButton.Click += OnCompleteOrderButtonClicked;
