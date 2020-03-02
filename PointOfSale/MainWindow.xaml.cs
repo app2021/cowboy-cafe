@@ -33,36 +33,9 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-            /*
-            var data = new Order();
-            DataContext = data;
 
-            CancelOrderButton.Click += OnCancelOrderButtonClicked;
-            CompleteOrderButton.Click += OnCompleteOrderButtonClicked;
-            */
         }
 
-        /*
-        /// <summary>
-        /// When Cancel Order button is clicked
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnCancelOrderButtonClicked(object sender, RoutedEventArgs e)
-        {
-            this.DataContext = new Order();
-        }
-
-        /// <summary>
-        /// When Complete Order button is clicked 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnCompleteOrderButtonClicked(object sender, RoutedEventArgs e)
-        {
-            this.DataContext = new Order();
-        }
-        */
 
     }
 }

@@ -22,7 +22,7 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" TextAlignment="Left"  Text="{Binding}"/>
-                        <TextBlock Grid.Column="1" TextAlignment="Right" Text ="{Binding Path= Price}"/>
+                        <TextBlock Grid.Column="1" TextAlignment="Right" Margin="10,0,0,0" Text ="{Binding Path= Price, StringFormat=c}"/>
                     </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
