@@ -33,14 +33,16 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-
+            /*
             var data = new Order();
             DataContext = data;
 
             CancelOrderButton.Click += OnCancelOrderButtonClicked;
             CompleteOrderButton.Click += OnCompleteOrderButtonClicked;
+            */
         }
 
+        /*
         /// <summary>
         /// When Cancel Order button is clicked
         /// </summary>
@@ -60,6 +62,7 @@ namespace PointOfSale
         {
             this.DataContext = new Order();
         }
+        */
 
     }
 }

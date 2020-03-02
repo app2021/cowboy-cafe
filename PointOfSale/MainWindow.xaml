@@ -9,25 +9,6 @@
 
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-
-
-
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Name="ItemSelectionButton" Grid.Row="0" >Item Selection</Button>
-            <Button Name="CancelOrderButton" Grid.Row="0" >Cancel Order</Button>
-            <Button Name="CompleteOrderButton" Grid.Row="0" >Complete Order</Button>
-        </StackPanel>
-
-
-        <local:MenuItemSelectionControl Grid.Column="0" Grid.Row="1"></local:MenuItemSelectionControl>
-        <local:OrderSummaryControl Grid.Column="1" Grid.Row="1"></local:OrderSummaryControl>
+        <local:OrderControl></local:OrderControl>
     </Grid>
 </Window>

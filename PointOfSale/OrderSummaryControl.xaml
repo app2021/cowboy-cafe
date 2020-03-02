@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
 
         <ListBox Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Path=Items}">
-                <ListBox.ItemTemplate>
+            <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <TextBlock Text="{Binding}"/>
@@ -39,7 +39,9 @@
          <ListBox Grid.Row="1">
             <TextBlock>Subtotal: </TextBlock>
             <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Path=Subtotal, StringFormat=c}"/>
-         </ListBox>
+            <TextBlock>Order #:</TextBlock>
+            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Path=OrderNumber}"/>
+        </ListBox>
 
 
 
