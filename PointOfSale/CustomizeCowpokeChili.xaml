@@ -8,10 +8,21 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <TextBlock FontSize="30" Text="Customize Cowpoke Chili"/>
-        <StackPanel Orientation="Horizontal"  Margin="40">
+        <StackPanel Orientation="Vertical"  Margin="40">
 
             <Label>Green Onions</Label>
             <CheckBox IsChecked="{Binding Path=GreenOnions}"/>
+
+            <Label>Cheese</Label>
+            <CheckBox IsChecked="{Binding Path=Cheese}"/>
+
+
+            <Label>Sour Cream</Label>
+            <CheckBox IsChecked="{Binding Path=SourCream}"/>
+
+            <Label>Tortilla Strips</Label>
+            <CheckBox IsChecked="{Binding Path=TortillaStrips}"/>
+
 
         </StackPanel>
     </Grid>
