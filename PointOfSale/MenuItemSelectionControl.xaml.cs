@@ -17,7 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
-
+using CowboyCafe.Extensions;
 namespace PointOfSale
 {
     /// <summary>
@@ -25,12 +25,16 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
+
+        private OrderControl orderControl;
         /// <summary>
         /// Interaction logic for MenuItemSelectionControl.xaml
         /// </summary>
         public MenuItemSelectionControl()
         {
             InitializeComponent();
+
+
             AddCowpokeChiliButton.Click += OnAddCowpokeChiliButtonClicked;
             AddRustlersRibsButton.Click += OnAddRustlersRibsButtonClicked;
             AddPecosPulledPorkButton.Click += OnAddPecosPulledPorkButtonClicked;
@@ -61,6 +65,25 @@ namespace PointOfSale
                 data.Add(new Water());
             }
         }
+
+        
+        /*
+        public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order) {
+
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "CowpokeChili":
+                            order.Add(new CowpokeChili());
+                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            break;
+                        }
+                }
+            }
+            */
 
         /// <summary>
         /// Adds Item to the order
@@ -160,9 +183,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order data) // checks if you can cast it and if assigns it to data
             {
                 data.Add(new CowpokeChili());
+                orderControl.SwapScreen(new CustomizeCowpokeChili());
+
             }
         }
 
