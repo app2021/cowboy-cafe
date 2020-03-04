@@ -181,13 +181,16 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
+        public void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order data) // checks if you can cast it and if assigns it to data
             {
-                data.Add(new CowpokeChili());
-                orderControl.SwapScreen(new CustomizeCowpokeChili());
+                var entree = new CowpokeChili();
+                var screen = new CustomizeCowpokeChili();
+                screen.DataContext = entree;
+                data.Add(entree);
+                orderControl.SwapScreen(screen);
 
             }
         }

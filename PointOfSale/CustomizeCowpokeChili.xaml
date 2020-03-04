@@ -8,5 +8,11 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <TextBlock FontSize="30" Text="Customize Cowpoke Chili"/>
+        <StackPanel Orientation="Horizontal"  Margin="40">
+
+            <Label>Green Onions</Label>
+            <CheckBox IsChecked="{Binding Path=GreenOnions}"/>
+
+        </StackPanel>
     </Grid>
 </UserControl>
