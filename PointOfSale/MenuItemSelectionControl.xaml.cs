@@ -53,6 +53,28 @@ namespace PointOfSale
             AddCowboyCoffeeButton.Click += OnAddCowboyCoffeeButtonClicked;
             AddWaterButton.Click += OnAddWaterButtonClicked;
         }
+
+        /// <summary>
+        /// Adds Item to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
+            {
+                var entree = new CowpokeChili();
+                var screen = new CustomizeCowpokeChili();
+                //screen.DataContext = entree;
+                //data.Add(entree);
+                // orderControl.SwapScreen(screen);
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+
+            }
+        }
+
         /// <summary>
         /// Adds Item to the order
         /// </summary>
@@ -176,24 +198,7 @@ namespace PointOfSale
             }
         }
 
-        /// <summary>
-        /// Adds Item to the order
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
-        {
-            var orderControl = this.FindAncestor<OrderControl>();
-            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
-            {
-                var entree = new CowpokeChili();
-                var screen = new CustomizeCowpokeChili();
-                screen.DataContext = entree;
-                data.Add(entree);
-                orderControl.SwapScreen(screen);
 
-            }
-        }
 
         /// <summary>
         /// Adds Item to the order
@@ -271,6 +276,23 @@ namespace PointOfSale
             {
                 data.Add(new AngryChicken());
             }
+        }
+
+        void AddItemAndOpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
+        {
+            var order = DataContext as Order;
+            if(order == null) throw new Exception("DataContext expected to be an Order instance");
+
+            if(screen != null)
+            {
+                var orderControl = this.FindAncestor<OrderControl>();
+                if (orderControl == null) throw new Exception("An ancestor of OrderControl expected");
+
+                screen.DataContext = item;
+                orderControl.SwapScreen(screen);
+            }
+
+            order.Add(item);
         }
     }
 }

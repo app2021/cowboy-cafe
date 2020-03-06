@@ -10,18 +10,13 @@
         <TextBlock FontSize="30" Text="Customize Cowpoke Chili"/>
         <StackPanel Orientation="Vertical"  Margin="40">
 
-            <Label>Green Onions</Label>
-            <CheckBox IsChecked="{Binding Path=GreenOnions}"/>
+            <CheckBox IsChecked="{Binding Path=GreenOnions}">Green Onions</CheckBox>
 
-            <Label>Cheese</Label>
-            <CheckBox IsChecked="{Binding Path=Cheese}"/>
+            <CheckBox IsChecked="{Binding Path=Cheese}">Cheese</CheckBox>
 
+            <CheckBox IsChecked="{Binding Path=SourCream}">Sour Creme</CheckBox>
 
-            <Label>Sour Cream</Label>
-            <CheckBox IsChecked="{Binding Path=SourCream}"/>
-
-            <Label>Tortilla Strips</Label>
-            <CheckBox IsChecked="{Binding Path=TortillaStrips}"/>
+            <CheckBox IsChecked="{Binding Path=TortillaStrips}">Tortilla Strips</CheckBox>
 
 
         </StackPanel>

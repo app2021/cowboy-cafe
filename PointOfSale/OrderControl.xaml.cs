@@ -33,12 +33,20 @@ namespace PointOfSale
 
             CancelOrderButton.Click += OnCancelOrderButtonClicked;
             CompleteOrderButton.Click += OnCompleteOrderButtonClicked;
+            ItemSelectionButton.Click += OnItemSelectionButtonClicked;
 
         }
 
         public void SwapScreen(UIElement element)
         {
             Container.Child = element;
+        }
+
+        void OnItemSelectionButtonClicked(object sender, RoutedEventArgs e)
+        {
+
+            Container.Child = new MenuItemSelectionControl();
+
         }
 
         /// <summary>

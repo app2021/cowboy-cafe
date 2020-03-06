@@ -15,21 +15,26 @@
 
         <ListBox Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Path=Items}">
             <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
+                <DataTemplate>
+                    <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
                         <TextBlock Grid.Column="0" TextAlignment="Left"  Text="{Binding}"/>
                         <TextBlock Grid.Column="1" TextAlignment="Right" Margin="10,0,0,0" Text ="{Binding Path= Price, StringFormat=c}"/>
+                        <ListView Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path= SpecialInstructions}"/>
                     </Grid>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
-         <ListBox Grid.Row="1">
-            <TextBlock>Subtotal: </TextBlock>
+        <ListBox Grid.Row="1">
+            <TextBlock>Subtotal:</TextBlock>
             <TextBlock Grid.Row="1" Text="{Binding Path=Subtotal, StringFormat=c}"/>
             <TextBlock>Order #:</TextBlock>
             <TextBlock Grid.Row="1" Text="{Binding Path=OrderNumber}"/>
