@@ -34,7 +34,7 @@
         </ListBox>
 
         <ListBox Grid.Row="1">
-            <TextBlock>Subtotal:</TextBlock>
+            <Label>Subtotal: </Label>
             <TextBlock Grid.Row="1" Text="{Binding Path=Subtotal, StringFormat=c}"/>
             <TextBlock>Order #:</TextBlock>
             <TextBlock Grid.Row="1" Text="{Binding Path=OrderNumber}"/>
