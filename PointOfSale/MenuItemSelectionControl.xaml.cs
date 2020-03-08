@@ -66,14 +66,43 @@ namespace PointOfSale
             {
                 var entree = new CowpokeChili();
                 var screen = new CustomizeCowpokeChili();
-                //screen.DataContext = entree;
-                //data.Add(entree);
-                // orderControl.SwapScreen(screen);
                 AddItemAndOpenCustomizationScreen(entree, screen);
-
 
             }
         }
+
+        /// <summary>
+        /// Adds Item to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnAddRustlersRibsButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
+            {
+                data.Add(new RustlersRibs());
+
+            }
+        }
+
+        /// <summary>
+        /// Adds Item to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnAddPecosPulledPorkButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
+            {
+                var entree = new PecosPulledPork();
+                var screen = new CustomizePecosPulledPork();
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
+        }
+
 
         /// <summary>
         /// Adds Item to the order
@@ -200,31 +229,9 @@ namespace PointOfSale
 
 
 
-        /// <summary>
-        /// Adds Item to the order
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddRustlersRibsButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
-            {
-                data.Add(new RustlersRibs());
-            }
-        }
 
-        /// <summary>
-        /// Adds Item to the order
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddPecosPulledPorkButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
-            {
-                data.Add(new PecosPulledPork());
-            }
-        }
+
+
 
         /// <summary>
         /// Adds Item to the order

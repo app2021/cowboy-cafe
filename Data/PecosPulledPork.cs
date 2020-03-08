@@ -38,15 +38,35 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool bread = true;
+
         /// <summary>
         /// If the entree should be served with bread
         /// </summary>
-        public bool Bread { get; set; } = true;
+        public bool Bread {
+            get { return bread; } 
+            set
+            {
+                bread = value;
+                NotifyOfPropertyChange("Bread");
+            } 
+        }
+
+
+        public bool pickle = true;
 
         /// <summary>
         /// If the entree should be served with pickle
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get { return pickle; }
+            set
+            {
+                pickle = value;
+                NotifyOfPropertyChange("Pickle");
+            }
+        }
 
         /// <summary>
         /// A list of the special instructions
