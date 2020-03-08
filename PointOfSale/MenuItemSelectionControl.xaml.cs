@@ -103,6 +103,40 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds Item to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnAddTrailBurgerButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
+            {
+                var entree = new TrailBurger();
+                var screen = new CustomizeTrailBurger();
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
+        }
+
+        /// <summary>
+        /// Adds Item to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnAddDakotaDoubleBurgerButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
+            {
+                var entree = new DakotaDoubleBurger();
+                var screen = new CustomizeDakotaDoubleBurger();
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
+        }
+
 
         /// <summary>
         /// Adds Item to the order
@@ -233,31 +267,9 @@ namespace PointOfSale
 
 
 
-        /// <summary>
-        /// Adds Item to the order
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddTrailBurgerButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
-            {
-                data.Add(new TrailBurger());
-            }
-        }
 
-        /// <summary>
-        /// Adds Item to the order
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddDakotaDoubleBurgerButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
-            {
-                data.Add(new DakotaDoubleBurger());
-            }
-        }
+
+
 
         /// <summary>
         /// Adds Item to the order

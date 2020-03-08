@@ -13,7 +13,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Trailburger entree
     /// </summary>
-    public class TrailBurger: Entree
+    public class TrailBurger : Entree
     {
 
         /// <summary>
@@ -39,30 +39,81 @@ namespace CowboyCafe.Data
             }
         }
 
+        public bool bun = true;
         /// <summary>
         /// If the entree should have a bun
         /// </summary>
-        public bool Bun { get; set; } = true;
+        public bool Bun
+        {
+            get { return bun; }
+            set
+            {
+                bun = value;
+                NotifyOfPropertyChange("Bun");
+            }
+        }
 
+
+        public bool ketchup = true;
         /// <summary>
         /// If the entree should have ketchup
         /// </summary>
-        public bool Ketchup { get; set; } = true;
+        public bool Ketchup
+        {
+            get { return ketchup; }
+            set
+            {
+                ketchup = value;
+                NotifyOfPropertyChange("Ketchup");
+            }
+        }
 
+
+        public bool mustard = true;
         /// <summary>
         /// If the entree should have mustard
         /// </summary>
-        public bool Mustard { get; set; } = true;
+        public bool Mustard
+        {
+            get { return mustard; }
+            set
+            {
+                mustard = value;
+                NotifyOfPropertyChange("Mustard");
+            }
+        }
 
+
+        public bool pickle = true;
         /// <summary>
         /// If the entree should have pickles
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get { return pickle; }
+            set
+            {
+                pickle = value;
+                NotifyOfPropertyChange("Pickle");
+            }
+        }
 
+
+        public bool cheese = true;
         /// <summary>
         /// If the entree should have cheese
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese
+        {
+            get { return cheese; }
+            set
+            {
+                cheese = value;
+                NotifyOfPropertyChange("Cheese");
+            }
+        }
+
+
         /// <summary>
         /// A list of the special instructions
         /// </summary>
