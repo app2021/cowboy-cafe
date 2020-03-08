@@ -43,10 +43,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Gets the price of the side
         /// </summary>
-        public abstract double Price {
-            get;
-        
-        }
+       // public abstract double Price { get; }
 
         /// <summary>
         /// Gets the calories of the side
