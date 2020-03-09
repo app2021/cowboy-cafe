@@ -236,6 +236,18 @@ namespace PointOfSale
             }
         }
 
+        void OnAddJerkedSodaButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
+            {
+                var entree = new JerkedSoda();
+                var screen = new CustomizeJerkedSoda();
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
+        }
+
 
 
         /// <summary>
@@ -296,18 +308,7 @@ namespace PointOfSale
             }
         }
 
-        /// <summary>
-        /// Adds Item to the order
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddJerkedSodaButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
-            {
-                data.Add(new JerkedSoda());
-            }
-        }
+
 
 
 

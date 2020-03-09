@@ -116,12 +116,15 @@ namespace CowboyCafe.Data
 
         private void OnItemPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
+
+            UpdateSubtotal();
+
+
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             if (e.PropertyName == "Price")
             {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             }
-            UpdateSubtotal();
         }
 
     }
