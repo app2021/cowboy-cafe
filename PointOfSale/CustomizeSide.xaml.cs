@@ -14,15 +14,13 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CustomizeChiliCheeseFries.xaml
+    /// Interaction logic for CustomizeSide.xaml
     /// </summary>
-    public partial class CustomizeChiliCheeseFries : UserControl
+    public partial class CustomizeSide : UserControl
     {
-        public CustomizeChiliCheeseFries()
+        public CustomizeSide()
         {
             InitializeComponent();
-
         }
-
     }
 }

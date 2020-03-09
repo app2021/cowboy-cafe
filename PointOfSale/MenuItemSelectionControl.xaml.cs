@@ -177,11 +177,65 @@ namespace PointOfSale
             if (DataContext is Order data) // checks if you can cast it and if assigns it to data
             {
                 var entree = new ChiliCheeseFries();
-                var screen = new CustomizeChiliCheeseFries();
+                var screen = new CustomizeSide();
                 AddItemAndOpenCustomizationScreen(entree, screen);
 
             }
         }
+
+        /// <summary>
+        /// Adds Item to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnAddCornDogersButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
+            {
+                var entree = new CornDodgers();
+                var screen = new CustomizeSide();
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
+        }
+
+
+        /// <summary>
+        /// Adds Item to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnPanDeCampoButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
+            {
+                var entree = new PanDeCampo();
+                var screen = new CustomizeSide();
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
+        }
+
+
+        /// <summary>
+        /// Adds Item to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnAddBakedBeansButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
+            {
+                var entree = new BakedBeans();
+                var screen = new CustomizeSide();
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
+        }
+
 
 
         /// <summary>
@@ -255,44 +309,8 @@ namespace PointOfSale
             }
         }
 
-        /// <summary>
-        /// Adds Item to the order
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddBakedBeansButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
-            {
-                data.Add(new BakedBeans());
-            }
-        }
 
-        /// <summary>
-        /// Adds Item to the order
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnPanDeCampoButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
-            {
-                data.Add(new PanDeCampo());
-            }
-        }
 
-        /// <summary>
-        /// Adds Item to the order
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddCornDogersButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
-            {
-                data.Add(new CornDodgers());
-            }
-        }
 
 
 

@@ -54,6 +54,19 @@ namespace CowboyCafe.Data
             }
               }
 
+
+        public void UpdateSubtotal()
+        {
+            double s = 0;
+
+            foreach(IOrderItem item in items)
+            {
+                s += item.Price;
+            }
+
+            Subtotal = s;
+        }
+
         /// <summary>
         /// method to add an item to an order
         /// </summary>
@@ -108,6 +121,7 @@ namespace CowboyCafe.Data
             {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             }
+            UpdateSubtotal();
         }
 
     }

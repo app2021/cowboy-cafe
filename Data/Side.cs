@@ -29,6 +29,7 @@ namespace CowboyCafe.Data
             get
             {
                 return size;
+
             }
             set
             {
@@ -36,6 +37,89 @@ namespace CowboyCafe.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Small"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Medium"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Large"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+
+
+
+            }
+
+        }
+
+
+
+        public bool Small
+        {
+            get
+            {
+                if(Size == Size.Small)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            set
+            {
+                if(value == true)
+                {
+                    Size = Size.Small;
+
+                }
+
+            }
+        }
+
+
+        public bool Medium
+        {
+            get
+            {
+                if (Size == Size.Medium)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            set
+            {
+                if (value == true)
+                {
+                    Size = Size.Medium;
+
+                }
+
+            }
+        }
+
+        public bool Large
+        {
+            get
+            {
+                if (Size == Size.Large)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            set
+            {
+                if (value == true)
+                {
+                    Size = Size.Large;
+
+                }
 
             }
         }
