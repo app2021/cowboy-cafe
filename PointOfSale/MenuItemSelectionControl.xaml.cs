@@ -291,9 +291,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddWaterButtonClicked(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order data) // checks if you can cast it and if assigns it to data
             {
-                data.Add(new Water());
+                var entree = new Water();
+                var screen = new CustomizeWater();
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
             }
         }
 
