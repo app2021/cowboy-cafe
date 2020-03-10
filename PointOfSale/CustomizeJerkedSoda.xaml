@@ -12,6 +12,14 @@
 
         <StackPanel Orientation="Vertical"  Margin="40">
 
+            <Label>Size:</Label>
+
+            <CheckBox IsChecked="{Binding Path=Small}">Small</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Medium}">Medium</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Large}">Large</CheckBox>
+
+
+
             <Label>Flavor:</Label>
             
             <CheckBox IsChecked="{Binding Path=CreamSoda}">Cream Soda</CheckBox>
