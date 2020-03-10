@@ -39,7 +39,10 @@ namespace CowboyCafe.Data
             }
         }
 
-        public bool bun = true;
+        /// <summary>
+        /// if there is a bun
+        /// </summary>
+        private bool bun = true;
         /// <summary>
         /// If the entree should have a bun
         /// </summary>
@@ -53,8 +56,10 @@ namespace CowboyCafe.Data
             }
         }
 
-
-        public bool ketchup = true;
+        /// <summary>
+        /// if there is ketchup
+        /// </summary>
+        private bool ketchup = true;
         /// <summary>
         /// If the entree should have ketchup
         /// </summary>
@@ -68,8 +73,10 @@ namespace CowboyCafe.Data
             }
         }
 
-
-        public bool mustard = true;
+        /// <summary>
+        /// if there is msutard
+        /// </summary>
+        private bool mustard = true;
         /// <summary>
         /// If the entree should have mustard
         /// </summary>
@@ -83,8 +90,10 @@ namespace CowboyCafe.Data
             }
         }
 
-
-        public bool pickle = true;
+        /// <summary>
+        /// if there is pickle
+        /// </summary>
+        private bool pickle = true;
         /// <summary>
         /// If the entree should have pickles
         /// </summary>
@@ -98,8 +107,10 @@ namespace CowboyCafe.Data
             }
         }
 
-
-        public bool cheese = true;
+        /// <summary>
+        /// if there is cheese
+        /// </summary>
+        private bool cheese = true;
         /// <summary>
         /// If the entree should have cheese
         /// </summary>

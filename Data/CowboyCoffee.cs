@@ -19,9 +19,11 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If it should have ice
         /// </summary>
-
         private bool ice = false;
 
+        /// <summary>
+        /// If it should have ice
+        /// </summary>
         public override bool Ice
         {
             get { return ice; }
@@ -33,7 +35,9 @@ namespace CowboyCafe.Data
         }
 
 
-
+        /// <summary>
+        /// If there should be room for cream
+        /// </summary>
         private bool roomForCream = false;
         /// <summary>
         /// If there should be room for cream
@@ -48,7 +52,9 @@ namespace CowboyCafe.Data
         }
 
 
-
+        /// <summary>
+        /// If the coffee should e decaf
+        /// </summary>
         private bool decaf = false;
         /// <summary>
         /// If the coffee should be decaf
@@ -111,9 +117,7 @@ namespace CowboyCafe.Data
         public override List<string> SpecialInstructions
         {
             get
-            {
-                
-            
+            {           
                     List<string> instructions = new List<string>();
 
                     if (Ice) { instructions.Add("Add Ice"); }

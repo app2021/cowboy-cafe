@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: ExtentionMethods.cs
+ * Purpose: Find the first ancestor in the Visual Tree
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;

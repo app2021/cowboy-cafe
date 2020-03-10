@@ -36,6 +36,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// If there should be lemon
+        /// </summary>
         private bool lemon = false;
         /// <summary>
         /// If the water should include a lemon
@@ -50,8 +53,14 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// if there should be ice
+        /// </summary>
         private bool ice = true;
 
+        /// <summary>
+        /// if there should be ice
+        /// </summary>
         public override bool Ice
         {
             get { return ice; }

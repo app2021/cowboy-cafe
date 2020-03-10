@@ -57,6 +57,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// The flavor of the soda
+        /// </summary>
         private SodaFlavor flavor;
 
         /// <summary>
@@ -78,6 +81,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// If the flavor is Birch Beer
+        /// </summary>
         public bool BirchBeer
         {
             get
@@ -97,6 +103,9 @@ namespace CowboyCafe.Data
   
         }
 
+        /// <summary>
+        /// If the flavor is CreamSoda
+        /// </summary>
         public bool CreamSoda
         {
             get
@@ -116,6 +125,10 @@ namespace CowboyCafe.Data
 
         }
 
+
+        /// <summary>
+        /// If the flavor is Orange Soda
+        /// </summary>
         public bool OrangeSoda
         {
             get
@@ -135,6 +148,9 @@ namespace CowboyCafe.Data
 
         }
 
+        /// <summary>
+        /// If the flavor is Sarsparilla
+        /// </summary>
         public bool Sarsparilla
         {
             get
@@ -154,6 +170,9 @@ namespace CowboyCafe.Data
 
         }
 
+        /// <summary>
+        /// If the flavor is RootBeer
+        /// </summary>
         public bool RootBeer
         {
             get
@@ -176,9 +195,14 @@ namespace CowboyCafe.Data
     
 
 
-
+        /// <summary>
+        /// If there should be ice
+        /// </summary>
         private bool ice = true;
 
+        /// <summary>
+        /// If there should be ice
+        /// </summary>
         public override bool Ice
         {
             get { return ice; }

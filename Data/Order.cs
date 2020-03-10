@@ -54,7 +54,9 @@ namespace CowboyCafe.Data
             }
               }
 
-
+        /// <summary>
+        /// Updates the subtotal value
+        /// </summary>
         public void UpdateSubtotal()
         {
             double s = 0;
@@ -114,6 +116,11 @@ namespace CowboyCafe.Data
 
         }
 
+        /// <summary>
+        /// Implements the Property Changed Event Args
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnItemPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
 

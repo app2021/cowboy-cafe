@@ -24,5 +24,6 @@ namespace CowboyCafe.Data
         /// The special instructions for this IOrderItem
         /// </summary>
         public virtual List<string> SpecialInstructions { get; }
+
     }
 }

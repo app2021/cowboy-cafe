@@ -38,6 +38,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// If there should be bread
+        /// </summary>
         private bool bread = true;
 
         /// <summary>
@@ -52,7 +55,9 @@ namespace CowboyCafe.Data
             } 
         }
 
-
+        /// <summary>
+        /// If there should be a pickle
+        /// </summary>
         public bool pickle = true;
 
         /// <summary>

@@ -38,6 +38,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// If the entree should be served with a pickle
+        /// </summary>
         private bool pickle = true;
 
         /// <summary>
@@ -51,7 +54,9 @@ namespace CowboyCafe.Data
             }
         }
 
-
+        /// <summary>
+        /// If the entree should be served with bread
+        /// </summary>
         private bool bread = true;
         /// <summary>
         /// If the entree should be served with bread

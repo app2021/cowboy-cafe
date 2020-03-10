@@ -68,7 +68,9 @@ namespace CowboyCafe.Data
             return Size + " Chili Cheese Fries";
         }
 
-
+        /// <summary>
+        /// Returns an empty list of the Special Instructions
+        /// </summary>
         public override List<string> SpecialInstructions { get; }
 
     }

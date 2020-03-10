@@ -74,6 +74,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// if the tea is sweet
+        /// </summary>
         public bool sweet = true;
         /// <summary>
         /// If the tea is sweet
@@ -91,7 +94,9 @@ namespace CowboyCafe.Data
             }
         }
 
-
+        /// <summary>
+        /// if there is a lemon
+        /// </summary>
         public bool lemon = false;
         /// <summary>
         /// If the tea should have a lemon

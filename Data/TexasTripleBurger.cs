@@ -39,6 +39,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// If there is an egg
+        /// </summary>
         private bool egg = true;
         /// <summary>
         /// If the entree should have egg
@@ -53,14 +56,16 @@ namespace CowboyCafe.Data
             }
         }
 
-
+        /// <summary>
+        /// If there is bacon
+        /// </summary>
         private bool bacon = true;
         /// <summary>
         /// If the entree should have bacon
         /// </summary>
         public bool Bacon
         {
-            get { return egg; }
+            get { return bacon; }
             set
             {
                 bacon = value;
@@ -68,7 +73,9 @@ namespace CowboyCafe.Data
             }
         }
 
-
+        /// <summary>
+        /// if there is tomato
+        /// </summary>
         private bool tomato = true;
         /// <summary>
         /// If the entree should have tomatos
@@ -83,7 +90,9 @@ namespace CowboyCafe.Data
             }
         }
 
-
+        /// <summary>
+        /// if there is lettuce
+        /// </summary>
         private bool lettuce = true;
         /// <summary>
         /// If the entree should have lettuce
@@ -98,7 +107,9 @@ namespace CowboyCafe.Data
             }
         }
 
-
+        /// <summary>
+        /// if there is mayo
+        /// </summary>
         private bool mayo = true;
         /// <summary>
         /// If the entree should have mayo
@@ -113,7 +124,9 @@ namespace CowboyCafe.Data
             }
         }
 
-
+        /// <summary>
+        /// if there is a bun
+        /// </summary>
         private bool bun = true;
         /// <summary>
         /// If the entree should have a bun
@@ -128,6 +141,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// if there is ketchup
+        /// </summary>
         private bool ketchup = true;
         /// <summary>
         /// If the entree should have ketchup
@@ -142,6 +158,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// if there is mustard
+        /// </summary>
         private bool mustard = true;
         /// <summary>
         /// If the entree should have mustard
@@ -156,7 +175,9 @@ namespace CowboyCafe.Data
             }
         }
 
-
+        /// <summary>
+        /// if there is pickle
+        /// </summary>
         private bool pickle = true;
         /// <summary>
         /// If the entree should have pickles
@@ -171,6 +192,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// to cheese or not to cheese
+        /// </summary>
         private bool cheese = true;
         /// <summary>
         /// If the entree should have cheese
@@ -189,7 +213,6 @@ namespace CowboyCafe.Data
         /// <summary>
         /// A list of the special instructions
         /// </summary>
-
         public override List<string> SpecialInstructions
         {
             get

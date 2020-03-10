@@ -19,7 +19,9 @@ namespace CowboyCafe.Data
     /// </summary>
     public abstract class Entree: IOrderItem, INotifyPropertyChanged
     {
-
+        /// <summary>
+        /// To implement the INotifyPropertyChanged
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
 
@@ -38,6 +40,11 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
 
+
+        /// <summary>
+        /// Fancy method to handle the Property Change Event Args
+        /// </summary>
+        /// <param name="propertyName"></param>
         protected void NotifyOfPropertyChange(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

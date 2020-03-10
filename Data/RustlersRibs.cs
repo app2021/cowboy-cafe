@@ -26,6 +26,7 @@ namespace CowboyCafe.Data
             }
         }
 
+
         /// <summary>
         /// The calories of the entree
         /// </summary>

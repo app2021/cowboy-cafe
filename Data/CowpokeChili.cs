@@ -15,7 +15,7 @@ namespace CowboyCafe.Data
     public class CowpokeChili: Entree
     {
         /// <summary>
-        /// The property changed event
+        /// If the chili is topped with cheese
         /// </summary>
 
         private bool cheese = true;
@@ -33,6 +33,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// If there should be sour cream
+        /// </summary>
         private bool sourCream = true;
         /// <summary>
         /// If the chili is topped with sour cream
@@ -48,6 +51,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// If there should be green onions
+        /// </summary>
         private bool greenOnions = true;
         /// <summary>
         /// If the chili is topped with green onions
@@ -63,6 +69,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// If there should be Tortilla Strips
+        /// </summary>
         private bool tortillaStrips = true;
         /// <summary>
         /// If the chili is topped with tortilla strips
@@ -116,6 +125,7 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
         /// <summary>
         /// Returns the string representation of this object
         /// </summary>

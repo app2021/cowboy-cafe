@@ -17,9 +17,14 @@ namespace CowboyCafe.Data
     public abstract class Side: IOrderItem, INotifyPropertyChanged
     {
 
-
+        /// <summary>
+        /// To implement the INotifyPropertyChanged
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// The size of the side
+        /// </summary>
         private Size size;
 
         /// <summary>
@@ -50,7 +55,9 @@ namespace CowboyCafe.Data
         }
 
 
-
+        /// <summary>
+        /// If the size is small
+        /// </summary>
         public bool Small
         {
             get
@@ -75,7 +82,9 @@ namespace CowboyCafe.Data
             }
         }
 
-
+        /// <summary>
+        /// If the size is medium
+        /// </summary>
         public bool Medium
         {
             get
@@ -100,6 +109,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// If the size is large
+        /// </summary>
         public bool Large
         {
             get
@@ -134,6 +146,9 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract uint Calories { get; }
 
+        /// <summary>
+        /// An empty list of the special instrucions
+        /// </summary>
         public abstract List<string> SpecialInstructions { get; }
 
     }

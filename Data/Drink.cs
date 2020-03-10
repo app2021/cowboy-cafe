@@ -17,9 +17,15 @@ namespace CowboyCafe.Data
     public abstract class Drink: IOrderItem, INotifyPropertyChanged
     {
 
+
+        /// <summary>
+        /// Propery Changed Event Handler
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
-
+        /// <summary>
+        /// The size of the drink
+        /// </summary>
         private Size size;
 
         /// <summary>
@@ -56,6 +62,9 @@ namespace CowboyCafe.Data
 
         }
 
+        /// <summary>
+        /// If the size is small
+        /// </summary>
         public bool Small
         {
             get
@@ -80,7 +89,9 @@ namespace CowboyCafe.Data
             }
         }
 
-
+        /// <summary>
+        /// If the size is medium
+        /// </summary>
         public bool Medium
         {
             get
@@ -105,6 +116,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// If the size is large
+        /// </summary>
         public bool Large
         {
             get
@@ -149,7 +163,10 @@ namespace CowboyCafe.Data
         /// </summary>
         public virtual bool Ice { get; set; } = true;
 
-
+        /// <summary>
+        /// Method for handing PropertyChangedEventArgs
+        /// </summary>
+        /// <param name="propertyName"></param>
         protected void NotifyOfPropertyChange(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
