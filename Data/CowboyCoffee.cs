@@ -19,17 +19,49 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If it should have ice
         /// </summary>
-        public override bool Ice { get; set; } = false;
 
+        private bool ice = false;
+
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChange("Ice");
+            }
+        }
+
+
+
+        private bool roomForCream = false;
         /// <summary>
         /// If there should be room for cream
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        public bool RoomForCream {
+            get { return roomForCream; }
+            set
+            {
+                roomForCream = value;
+                NotifyOfPropertyChange("RoomForCream");
+            }
+        }
 
+
+
+        private bool decaf = false;
         /// <summary>
         /// If the coffee should be decaf
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf
+        {
+            get { return decaf; }
+            set
+            {
+                decaf = value;
+                NotifyOfPropertyChange("Decaf");
+            }
+        }
 
         /// <summary>
         /// The price of the coffee

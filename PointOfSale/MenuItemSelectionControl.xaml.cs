@@ -248,6 +248,40 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds Item to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnAddTexasTeaButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
+            {
+                var entree = new TexasTea();
+                var screen = new CustomizeTexasTea();
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
+        }
+
+        /// <summary>
+        /// Adds Item to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnAddCowboyCoffeeButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
+            {
+                var entree = new CowboyCoffee();
+                var screen = new CustomizeCowboyCoffee();
+                AddItemAndOpenCustomizationScreen(entree, screen);
+
+            }
+        }
+
 
 
         /// <summary>
@@ -281,44 +315,6 @@ namespace PointOfSale
                 }
             }
             */
-
-        /// <summary>
-        /// Adds Item to the order
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddCowboyCoffeeButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
-            {
-                data.Add(new CowboyCoffee());
-            }
-        }
-
-        /// <summary>
-        /// Adds Item to the order
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddTexasTeaButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data) // checks if you can cast it and if assigns it to data
-            {
-                data.Add(new TexasTea());
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -132,7 +132,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the drink
         /// </summary>
-        //public abstract double Price { get; }
+        //public virtual double Price { get; }
 
         /// <summary>
         /// The calories of the drink

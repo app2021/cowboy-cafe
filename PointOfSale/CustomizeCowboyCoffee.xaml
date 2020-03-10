@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.CustomizeJerkedSoda"
+﻿<UserControl x:Class="PointOfSale.CustomizeCowboyCoffee"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
 
-        <TextBlock FontSize="30" Text="Customize Jerked Soda"/>
+        <TextBlock FontSize="30" Text="Customize Cowboy Coffee"/>
 
         <StackPanel Orientation="Vertical"  Margin="40">
 
@@ -18,19 +18,11 @@
             <CheckBox IsChecked="{Binding Path=Medium}">Medium</CheckBox>
             <CheckBox IsChecked="{Binding Path=Large}">Large</CheckBox>
 
+            <Label>Other:</Label>
 
-
-            <Label>Flavor:</Label>
-            
-            <CheckBox IsChecked="{Binding Path=CreamSoda}">Cream Soda</CheckBox>
-            <CheckBox IsChecked="{Binding Path=OrangeSoda}">Orange Soda</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Sarsparilla}">Sarsparilla</CheckBox>
-            <CheckBox IsChecked="{Binding Path=BirchBeer}">Birch Beer</CheckBox>
-            <CheckBox IsChecked="{Binding Path=RootBeer}">Root Beer</CheckBox>
-            
-            <Label>Ice:</Label>
-
+            <CheckBox IsChecked="{Binding Path=Decaf}">Decaf</CheckBox>
             <CheckBox IsChecked="{Binding Path=Ice}">Ice</CheckBox>
+            <CheckBox IsChecked="{Binding Path=RoomForCream}">Room for Cream</CheckBox>
 
 
 
