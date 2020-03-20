@@ -13,10 +13,10 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <ListBox Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Path=Items}">
+        <ListBox Margin="10" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Path=Items}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
+                    <Grid Margin="10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition/>

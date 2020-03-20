@@ -13,8 +13,8 @@
             <Setter Property="Margin" Value="10"/>
             <Setter Property="VerticalAlignment" Value="Bottom"/>
         </Style>
-
     </UserControl.Resources>
+    
     <Grid HorizontalAlignment="Center">
         <TextBlock FontSize="30" Text="Customize Texas Triple Burger"/>
         <StackPanel Orientation="Vertical"  Margin="40">

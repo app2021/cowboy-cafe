@@ -6,7 +6,16 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+
+
+    <UserControl.Resources>
+        <Style TargetType="CheckBox">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid HorizontalAlignment="Center">
         <TextBlock FontSize="30" Text="Customize Water"/>
 
         <StackPanel Orientation="Vertical"  Margin="40">
