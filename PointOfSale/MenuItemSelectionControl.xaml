@@ -10,6 +10,7 @@
         <Style TargetType="Button">
             <Setter Property="Height" Value="50px"/>
             <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Margin" Value="10"/>
         </Style>
     </UserControl.Resources>
 

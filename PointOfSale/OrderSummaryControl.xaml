@@ -25,20 +25,20 @@
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <TextBlock Grid.Column="0" TextAlignment="Left"  Text="{Binding}"/>
-                        <TextBlock Grid.Column="1" TextAlignment="Right" Margin="10,0,0,0" Text ="{Binding Path= Price, StringFormat=c}"/>
-                        <ListView Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path= SpecialInstructions}"/>
+                        <TextBlock Grid.Column="0" TextAlignment="Left"  Text="{Binding}" FontSize="20"/>
+                        <TextBlock Grid.Column="1" TextAlignment="Right" Margin="10,0,0,0" Text ="{Binding Path= Price, StringFormat=c}" FontSize="20"/>
+                        <ListView Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path= SpecialInstructions}" FontSize="20"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <ListBox Grid.Row="1">
-            <Label>Subtotal: </Label>
-            <TextBlock Grid.Row="1" Text="{Binding Path=Subtotal, StringFormat=c}"/>
-            <TextBlock>Order #:</TextBlock>
-            <TextBlock Grid.Row="1" Text="{Binding Path=OrderNumber}"/>
-        </ListBox>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBlock FontSize="20" Margin="10,0,10,0">Subtotal:</TextBlock>
+            <TextBlock Margin="0,0,10,0" Grid.Row="1" Text="{Binding Path=Subtotal, StringFormat=c}" FontSize="20"/>
+            <TextBlock Margin="50,0,10,0" FontSize="20">Order: #</TextBlock>
+            <TextBlock Margin="0,0,0,0" Grid.Row="1" Text="{Binding Path=OrderNumber}" FontSize="20"/>
+        </StackPanel>
 
 
 

@@ -9,8 +9,8 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -18,9 +18,9 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Name="ItemSelectionButton" Grid.Row="0" >Item Selection</Button>
-            <Button Name="CancelOrderButton" Grid.Row="0" >Cancel Order</Button>
-            <Button Name="CompleteOrderButton" Grid.Row="0" >Complete Order</Button>
+            <Button Name="ItemSelectionButton" Grid.Row="0" FontSize="20" Margin="10" Padding="10">Item Selection</Button>
+            <Button Name="CancelOrderButton" Grid.Row="0" FontSize="20" Margin = "10" Padding=" 10">Cancel Order</Button>
+            <Button Name="CompleteOrderButton" Grid.Row="0" FontSize="20" Margin="10" Padding="10">Complete Order</Button>
         </StackPanel>
 
     
