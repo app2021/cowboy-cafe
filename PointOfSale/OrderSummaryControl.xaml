@@ -28,7 +28,7 @@
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Column="0" TextAlignment="Left"  Text="{Binding}" FontSize="20"/>
                         <TextBlock Grid.Column="1" TextAlignment="Right" Margin="10,0,0,0" Text ="{Binding Path= Price, StringFormat=c}" FontSize="20"/>
-                        <Button Click = "OnRemoveItem" Grid.Column="2" Margin="10,0,0,0">X</Button>
+                        <Button Click = "OnRemoveItem" Grid.Column="2" Margin="10,0,0,0" FontSize="20" Padding="10,0,10,0">X</Button>
                         <ListView Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path= SpecialInstructions}" FontSize="20"/>
                     </Grid>
                 </DataTemplate>

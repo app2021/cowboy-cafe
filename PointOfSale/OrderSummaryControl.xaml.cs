@@ -34,16 +34,16 @@ namespace PointOfSale
 
         public void OnRemoveItem(object sender, RoutedEventArgs e)
         {
-            //  public void Remove(IOrderItem item) {
+            
+            if (sender is Button)
+            {
+                Button lb = (Button)sender;
+                IOrderItem i = (IOrderItem)lb.DataContext;
+                Order o = (Order)DataContext;
+                o.Remove(i);                
 
-            var orderControl = this.FindAncestor<OrderControl>();
-            if (orderControl == null) return;
-
-            if (sender is Button button)
-                {
-
-                }
-
+            }
+            
         }
 
 
