@@ -100,6 +100,48 @@ namespace PointOfSale
                     screen.DataContext = o;
                     orderControl.SwapScreen(screen);
                 }
+                else if (o is JerkedSoda)
+                {
+                    var screen = new CustomizeJerkedSoda();
+                    screen.DataContext = o;
+                    orderControl.SwapScreen(screen);
+                }
+                else if (o is PanDeCampo)
+                {
+                    var screen = new CustomizeSide();
+                    screen.DataContext = o;
+                    orderControl.SwapScreen(screen);
+                }
+                else if (o is PecosPulledPork)
+                {
+                    var screen = new CustomizePecosPulledPork();
+                    screen.DataContext = o;
+                    orderControl.SwapScreen(screen);
+                }
+                else if (o is TexasTea)
+                {
+                    var screen = new CustomizeTexasTea();
+                    screen.DataContext = o;
+                    orderControl.SwapScreen(screen);
+                }
+                else if (o is TexasTripleBurger)
+                {
+                    var screen = new CustomizeTexasTripleBurger();
+                    screen.DataContext = o;
+                    orderControl.SwapScreen(screen);
+                }
+                else if (o is TrailBurger)
+                {
+                    var screen = new CustomizeTrailBurger();
+                    screen.DataContext = o;
+                    orderControl.SwapScreen(screen);
+                }
+                else if (o is Water)
+                {
+                    var screen = new CustomizeWater();
+                    screen.DataContext = o;
+                    orderControl.SwapScreen(screen);
+                }
             }
 
         }
