@@ -90,5 +90,40 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
             });
 
         }
+
+        // Test 8: Changing the "Size" property should invoke PropertyChanged for "Size"
+        [Fact]
+        public void ChangingSizeShouldInvokePropertyChangedForSize()
+        {
+            var coffee = new CowboyCoffee();
+            Assert.PropertyChanged(coffee, "Size", () =>
+            {
+                coffee.Size = Size.Large;
+            });
+        }
+
+
+        // Test 9: Changing the "Size" property should invoke PropertyChanged for "Calories"
+        [Fact]
+        public void ChangingSizeShouldInvokePropertyChangedForCalories()
+        {
+            var coffee = new CowboyCoffee();
+            Assert.PropertyChanged(coffee, "Calories", () =>
+            {
+                coffee.Size = Size.Large;
+            });
+        }
+
+        // Test 10: Changing the "Size" property should invoke PropertyChanged for "Price"
+        [Fact]
+        public void ChangingSizeShouldInvokePropertyChangedForPrice()
+        {
+            var coffee = new CowboyCoffee();
+            Assert.PropertyChanged(coffee, "Price", () =>
+            {
+                coffee.Size = Size.Large;
+            });
+        }
+
     }
 }
