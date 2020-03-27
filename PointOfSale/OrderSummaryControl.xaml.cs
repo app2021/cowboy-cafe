@@ -32,13 +32,13 @@ namespace PointOfSale
             
         }
 
-        public void OnRemoveItem(object sender, RoutedEventArgs e)
+         void OnRemoveItem(object sender, RoutedEventArgs e)
         {
             
             if (sender is Button)
             {
-                Button lb = (Button)sender;
-                IOrderItem i = (IOrderItem)lb.DataContext;
+                Button b = (Button)sender;
+                IOrderItem i = (IOrderItem)b.DataContext;
                 Order o = (Order)DataContext;
                 o.Remove(i);                
 
