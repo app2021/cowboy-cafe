@@ -170,6 +170,8 @@ namespace CowboyCafe.Data
         protected void NotifyOfPropertyChange(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+
         }
 
     }
