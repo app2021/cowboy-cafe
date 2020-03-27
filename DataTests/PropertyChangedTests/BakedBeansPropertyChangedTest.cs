@@ -9,7 +9,7 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
 {
     public class BakedBeansPropertyChangedTest
     {
-        // Test 1: Baked Beans should implement the INotifyPropertyChagned Interface
+        // Test 1: Baked Beans should implement the INotifyPropertyChanged Interface
         [Fact]
         public void BakedBeansShouldImplementINotifyPropertyChanged()
         {
