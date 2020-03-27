@@ -30,6 +30,7 @@
 
             <CheckBox IsChecked="{Binding Path=Lemon}">Lemon</CheckBox>
             <CheckBox IsChecked="{Binding Path=Sweet}">Sweet</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Ice}">Ice</CheckBox>
 
         </StackPanel>
     </Grid>

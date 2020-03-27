@@ -91,6 +91,26 @@ namespace CowboyCafe.Data
             {
                 sweet = value;
                 NotifyOfPropertyChange("Sweet");
+                NotifyOfPropertyChange("Calories");
+            }
+        }
+
+
+        /// <summary>
+        /// if there should be ice
+        /// </summary>
+        private bool ice = true;
+
+        /// <summary>
+        /// if there should be ice
+        /// </summary>
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChange("Ice");
             }
         }
 
