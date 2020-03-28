@@ -137,6 +137,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds Item to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void OnAddTexasTripleBurgerButtonClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
@@ -236,6 +241,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds item to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void OnAddJerkedSodaButtonClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
@@ -301,38 +311,12 @@ namespace PointOfSale
             }
         }
 
-        
-        /*
-        public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order) {
-
-                if (sender is Button button)
-                {
-                    switch (button.Tag)
-                    {
-                        case "CowpokeChili":
-                            order.Add(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
-                            break;
-                        }
-                }
-            }
-            */
-
-
-
-
 
         /// <summary>
-        /// Adds Item to the order
+        /// Adds item to the order
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-
-
-
+        /// <param name="item"></param>
+        /// <param name="screen"></param>
         void AddItemAndOpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
         {
             var order = DataContext as Order;

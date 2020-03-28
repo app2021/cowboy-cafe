@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: CustomizeDakotaDoubleBurger.xaml.cs
+ * Purpose: Customization screen
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;

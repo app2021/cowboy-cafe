@@ -32,6 +32,11 @@ namespace PointOfSale
             
         }
 
+        /// <summary>
+        /// Removes item
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
          void OnRemoveItem(object sender, RoutedEventArgs e)
         {
             
@@ -46,9 +51,11 @@ namespace PointOfSale
             
         }
 
-
-        //OrderControl to switch screens, The item that is being customized(the same instance)
-        //The screen that we switch to
+        /// <summary>
+        /// Adds item
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         void itemSelected(object sender, SelectionChangedEventArgs args)
         {
 
