@@ -9,16 +9,17 @@
 
     <UserControl.Resources>
         <Style TargetType="CheckBox">
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Margin" Value="20"/>
             <Setter Property="VerticalAlignment" Value="Bottom"/>
         </Style>
 
     </UserControl.Resources>
 
     <Grid HorizontalAlignment="Center">
-        <TextBlock FontSize="30" Text="Customize Dakota Double Burger"/>
-        <StackPanel Orientation="Vertical"  Margin="40">
+        <StackPanel Orientation="Vertical">
+
+            <TextBlock Margin="30" FontSize="30" Text="Customize Dakota Double Burger"/>
 
             <CheckBox IsChecked="{Binding Path=Tomato}">Tomato</CheckBox>
 

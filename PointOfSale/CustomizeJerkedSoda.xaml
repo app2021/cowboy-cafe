@@ -9,19 +9,21 @@
 
     <UserControl.Resources>
         <Style TargetType="CheckBox">
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Margin" Value="20"/>
             <Setter Property="VerticalAlignment" Value="Bottom"/>
         </Style>
     </UserControl.Resources>
 
     <Grid HorizontalAlignment="Center">
 
-        <TextBlock FontSize="30" Text="Customize Jerked Soda"/>
 
-        <StackPanel Orientation="Vertical"  Margin="40">
+        <StackPanel Orientation="Vertical">
 
-            <Label>Size:</Label>
+            <TextBlock Margin="30" FontSize="30" Text="Customize Jerked Soda"/>
+
+
+            <Label FontSize="20">Size:</Label>
 
             <CheckBox IsChecked="{Binding Path=Small}">Small</CheckBox>
             <CheckBox IsChecked="{Binding Path=Medium}">Medium</CheckBox>
@@ -29,7 +31,7 @@
 
 
 
-            <Label>Flavor:</Label>
+            <Label FontSize="20">Flavor:</Label>
             
             <CheckBox IsChecked="{Binding Path=CreamSoda}">Cream Soda</CheckBox>
             <CheckBox IsChecked="{Binding Path=OrangeSoda}">Orange Soda</CheckBox>

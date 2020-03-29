@@ -10,8 +10,8 @@
 
     <UserControl.Resources>
         <Style TargetType="CheckBox">
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="Margin" Value="20"/>
             <Setter Property="VerticalAlignment" Value="Bottom"/>
         </Style>
     </UserControl.Resources>
@@ -22,7 +22,6 @@
             <CheckBox IsChecked="{Binding Path=Large}">Large</CheckBox>
 
         </StackPanel>
-
 
 
     </Grid>

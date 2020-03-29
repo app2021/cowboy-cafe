@@ -10,25 +10,27 @@
 
     <UserControl.Resources>
         <Style TargetType="CheckBox">
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Margin" Value="20"/>
             <Setter Property="VerticalAlignment" Value="Bottom"/>
         </Style>
     </UserControl.Resources>
     
     <Grid HorizontalAlignment="Center">
 
-        <TextBlock FontSize="30" Text="Customize Cowboy Coffee"/>
 
         <StackPanel Orientation="Vertical"  Margin="40">
 
-            <Label>Size:</Label>
+            <TextBlock Margin="20" FontSize="30" Text="Customize Cowboy Coffee"/>
+
+
+            <Label FontSize="20">Size:</Label>
 
             <CheckBox IsChecked="{Binding Path=Small}">Small</CheckBox>
             <CheckBox IsChecked="{Binding Path=Medium}">Medium</CheckBox>
             <CheckBox IsChecked="{Binding Path=Large}">Large</CheckBox>
 
-            <Label>Other:</Label>
+            <Label FontSize="20">Other:</Label>
 
             <CheckBox IsChecked="{Binding Path=Decaf}">Decaf</CheckBox>
             <CheckBox IsChecked="{Binding Path=Ice}">Ice</CheckBox>

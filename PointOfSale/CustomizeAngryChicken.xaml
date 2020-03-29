@@ -10,16 +10,19 @@
 
     <UserControl.Resources>
         <Style TargetType="CheckBox">
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Margin" Value="10"/>
-            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Margin" Value="20"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="20"/>
         </Style>
     </UserControl.Resources>
 
 
     <Grid HorizontalAlignment="Center">
-        <TextBlock FontSize="30" Text="Customize Angry Chicken"/>
         <StackPanel Orientation="Vertical"  Margin="40">
+
+            <TextBlock FontSize="30" Text="Customize Angry Chicken"/>
 
             <CheckBox IsChecked="{Binding Path=Bread}">Bread</CheckBox>
 
