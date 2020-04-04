@@ -256,7 +256,7 @@ namespace PointOfSale
             if(PenniesChange >= Pennies)
             {
                 ReturnChange = ReturnChange - (Pennies * .01);
-              
+                
                 Pennies = 0;
 
             }
@@ -279,7 +279,7 @@ namespace PointOfSale
                         + "\nDimes: " + DimesChange
                         + "\nNickels: " + NickelsChange
                         + "\nPennies: " + PenniesChange
-                        + "\n\n Total Change:" + Change.ToString("C2")
+                        + "\n\n Total Change: " + Change.ToString("C2")
                         ;
 
             return r;
