@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -31,15 +32,25 @@ namespace PointOfSale
             var data = new Order();
             this.DataContext = data;
 
+
+
             CancelOrderButton.Click += OnCancelOrderButtonClicked;
             CompleteOrderButton.Click += OnCompleteOrderButtonClicked;
             ItemSelectionButton.Click += OnItemSelectionButtonClicked;
+
+
+
 
         }
 
         public void SwapScreen(UIElement element)
         {
             Container.Child = element;
+        }
+
+        public void SwapOrderSum(UIElement element)
+        {
+            OutsideBorder.Child = element;
         }
 
         void OnItemSelectionButtonClicked(object sender, RoutedEventArgs e)
@@ -68,10 +79,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnCompleteOrderButtonClicked(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
-            Container.Child = new MenuItemSelectionControl();
+            OutsideBorder.Child = new TransactionControl();
 
         }
+
+
+        
 
 
     }

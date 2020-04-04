@@ -44,6 +44,20 @@ namespace CowboyCafe.Data
         public double Subtotal { get; private set; }
 
 
+        private double total;
+
+       public double Total
+        {
+            get
+            {
+                UpdateSubtotal();
+                total = Subtotal * 1.16;
+                return total;
+            }
+        }
+
+
+
         /// <summary>
         /// The current order's order number
         /// </summary>

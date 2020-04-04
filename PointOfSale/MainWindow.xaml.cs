@@ -33,6 +33,8 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+            var dc = new CashRegisterModelView();
+            this.DataContext = dc;
 
         }
 
