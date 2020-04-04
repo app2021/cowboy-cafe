@@ -30,7 +30,7 @@ namespace PointOfSale
 
         public void complete()
         {
-            WhatsIn();
+            String r = WhatsIn();
 
             Pennies = Pennies + EnterPennies;
             Dimes = Dimes + EnterDimes;
@@ -39,11 +39,32 @@ namespace PointOfSale
             HalfDollars = HalfDollars + EnterHalfDollars;
             Dollars = Dollars + EnterDollars;
 
-            WhatsIn();
+            Ones = Ones + EnterOnes;
+            Twos = Twos + EnterTwos;
+            Fives = Fives + EnterFives;
+            Tens = Tens + EnterTens;
+            Twentys = Twentys + EnterTwentys;
+            Fiftys = Fiftys + EnterFiftys;
+            Hundreds = Hundreds + EnterHundreds;
 
-            MessageBox.Show(ReturnChange());
+            r += WhatsIn();
 
-            WhatsIn();
+            r+= "\n\n"+ ReturnChange();
+
+            r+= WhatsIn();
+
+            MessageBox.Show(r);
+
+            string reciept = Register.Receipt;
+
+            reciept += "\n\nTotal Paid: " + EnterTotal.ToString("C2")
+                       +  "\nTotal Change: " + Change.ToString("C02")
+                       + "\n\n" + DateTime.Now.ToString() +"\n\n";
+
+            MessageBox.Show(reciept);
+
+            ReceiptPrinter rp = Register.ReceiptPrinter;
+            rp.Print(reciept);
         }
 
         private bool completeButtonEnabled;
@@ -68,80 +89,100 @@ namespace PointOfSale
             }
         }
 
+
+
         public string ReturnChange()
         {
             double ReturnChange = Change;
             
             
-            int HundredsChange = (int) ReturnChange / 100;
-            if (HundredsChange > Hundreds)
-            {
-                ReturnChange = ReturnChange - (Hundreds * 100);
-                Hundreds = 0;
-            }
-            else
-            {
-                ReturnChange = ReturnChange - (HundredsChange * 100);
-                Hundreds = Hundreds -HundredsChange;
-            }
+            int HundredsChange = (int)( ReturnChange / 100); // how much to return
+                if (HundredsChange >= Hundreds)                // if amount to return is more than what there is
+                {
+                    ReturnChange = ReturnChange - (Hundreds * 100);  // remove all there is
+                    HundredsChange = Hundreds;
+                    Hundreds = 0;
 
-
-            int FiftiesChange = (int)ReturnChange / 50;
-            if (FiftiesChange > Fiftys)
-            {
-                ReturnChange = ReturnChange - (Fiftys * 50);
-                Fiftys = 0;
-            }
-            else
-            {
-                ReturnChange = ReturnChange - (FiftiesChange * 50);
-                Fiftys = Fiftys - FiftiesChange;
-            }
-
-
-            int TwentiesChange = (int)ReturnChange / 20;
-            if (TwentiesChange > Twentys)
-            {
-                ReturnChange = ReturnChange - (Twentys * 20);
-                Twentys = 0;
 
             }
             else
+                {
+                    ReturnChange = ReturnChange - (HundredsChange * 100);
+                    Hundreds = Hundreds - HundredsChange;
+                }
+            
+
+
+            int FiftiesChange = (int)(ReturnChange / 50);
+            if (FiftiesChange > 0)
             {
-                ReturnChange = ReturnChange - (TwentiesChange * 20);
-                Twentys = Twentys - TwentiesChange;
+                if (FiftiesChange >= Fiftys)
+                {
+                    ReturnChange = ReturnChange - (Fiftys * 50);
+                    FiftiesChange = Fiftys;
+                    Fiftys = 0;
+                }
+                else
+                {
+                    ReturnChange = ReturnChange - (FiftiesChange * 50);
+                    Fiftys = Fiftys - FiftiesChange;
+                }
             }
 
-            int TensChange = (int)ReturnChange / 10;
-            if(TensChange > Tens)
+
+            int TwentiesChange = (int)(ReturnChange / 20);
+            if (TwentiesChange > 0)
             {
-                ReturnChange = ReturnChange - (Tens * 10);
-                Tens = 0;
-            }
-            else
-            {
-                ReturnChange = ReturnChange - (TensChange * 10);
-                Tens = Tens - TensChange;
+                if (TwentiesChange >= Twentys)
+                {
+                    ReturnChange = ReturnChange - (Twentys * 20);
+                    TwentiesChange = Twentys;
+                    Twentys = 0;
+
+                }
+                else
+                {
+                    ReturnChange = ReturnChange - (TwentiesChange * 20);
+                    Twentys = Twentys - TwentiesChange;
+                }
             }
 
-            int FivesChange = (int)ReturnChange / 5;
-            if(FivesChange > Fives)
+            int TensChange = (int)(ReturnChange / 10);
+            if (TensChange > 0)
+            {
+                if (TensChange >= Tens)
+                {
+                    ReturnChange = ReturnChange - (Tens * 10);
+                    TensChange = Tens;
+                    Tens = 0;
+                }
+                else
+                {
+                    ReturnChange = ReturnChange - (TensChange * 10);
+                    Tens = Tens - TensChange;
+                }
+            }
+
+            int FivesChange = (int)(ReturnChange / 5);
+            if(FivesChange >= Fives)
             {
                 ReturnChange = ReturnChange - (Fives * 5);
+                FivesChange = Fives;
                 Fives = 0;
 
             }
             else
             {
                 ReturnChange = ReturnChange - (FivesChange * 5);
-                Fives = FivesChange - Fives;
+                Fives = Fives - FivesChange;
             }
 
 
-            int OnesChange = (int)ReturnChange / 1;
-            if(OnesChange > Ones)
+            int OnesChange = (int)(ReturnChange / 1);
+            if(OnesChange >= Ones)
             {
                 ReturnChange = ReturnChange - (Ones * 1);
+                OnesChange = Ones;
                 Ones = 0;
 
             }
@@ -153,9 +194,10 @@ namespace PointOfSale
             }
 
             int HalfDollarsChange = (int) (ReturnChange / .5);
-            if(HalfDollarsChange > HalfDollars)
+            if(HalfDollarsChange >= HalfDollars)
             {
                 ReturnChange = ReturnChange - (HalfDollars * .5);
+                HalfDollarsChange = HalfDollars;
                 HalfDollars = 0;
             }
             else
@@ -166,9 +208,11 @@ namespace PointOfSale
             }
 
             int QuartersChange = (int) (ReturnChange / (.25));
-            if(QuartersChange > Quarters)
+            if(QuartersChange >= Quarters)
             {
                 ReturnChange = ReturnChange - (Quarters * .25);
+                QuartersChange = Quarters;
+
                 Quarters = 0;
             }
             else
@@ -179,9 +223,10 @@ namespace PointOfSale
             }
 
             int DimesChange = (int) (ReturnChange / .1);
-            if(DimesChange > Dimes)
+            if(DimesChange >= Dimes)
             {
                 ReturnChange = ReturnChange - (Dimes * .1);
+                DimesChange = Dimes;
                 Dimes = 0;
 
             }
@@ -193,9 +238,10 @@ namespace PointOfSale
             }
 
             int NickelsChange = (int)(ReturnChange / .05);
-            if(NickelsChange > Nickels)
+            if(NickelsChange >= Nickels)
             {
                 ReturnChange = ReturnChange - (Nickels * .05);
+                NickelsChange = Nickels;
                 Nickels = 0;
 
             }
@@ -207,9 +253,10 @@ namespace PointOfSale
             }
 
             int PenniesChange = (int)(ReturnChange / .01);
-            if(PenniesChange > Pennies)
+            if(PenniesChange >= Pennies)
             {
                 ReturnChange = ReturnChange - (Pennies * .01);
+              
                 Pennies = 0;
 
             }
@@ -232,20 +279,21 @@ namespace PointOfSale
                         + "\nDimes: " + DimesChange
                         + "\nNickels: " + NickelsChange
                         + "\nPennies: " + PenniesChange
-                        + "\n\n Total Change:" + Change
+                        + "\n\n Total Change:" + Change.ToString("C2")
                         ;
 
             return r;
         }
 
-        public void WhatsIn()
+        public string WhatsIn()
         {
-            string r = "Hundreds: " + Hundreds
+            string r = "\n\nHundreds: " + Hundreds
             + "\nFifties: " + Fiftys
             + "\nTwenties: " + Twentys
             + "\nTens: " + Tens
             + "\nFives: " + Fives
             + "\nOnes: " + Ones
+            + "\nDollars: " + Dollars
             + "\nHalf Dollars: " + HalfDollars
             + "\nQuarters: " + Quarters
             + "\nDimes: " + Dimes
@@ -253,7 +301,7 @@ namespace PointOfSale
             + "\nPennies: " + Pennies
             ;
 
-            MessageBox.Show(r);
+            return r;
         }
 
 
@@ -387,12 +435,138 @@ namespace PointOfSale
             }
         }
 
+        private int enterOnes;
+        public int EnterOnes
+        {
+            get
+            {
+                return enterOnes;
+            }
+            set
+            {
+                if ((value + enterOnes) < 0) return;
+                enterOnes = value;
+                InvokePropertyChanged("EnterOnes");
+                InvokePropertyChanged("EnterTotal");
+                InvokePropertyChanged("CompleteButtonEnabled");
+
+            }
+        }
+
+        private int enterTwos;
+        public int EnterTwos
+        {
+            get
+            {
+                return enterTwos;
+            }
+            set
+            {
+                if ((value + enterTwos) < 0) return;
+                enterTwos = value;
+                InvokePropertyChanged("EnterTwos");
+                InvokePropertyChanged("EnterTotal");
+                InvokePropertyChanged("CompleteButtonEnabled");
+            }
+        }
+
+        private int enterFives;
+        public int EnterFives
+        {
+            get
+            {
+                return enterFives;
+            }
+            set
+            {
+                if ((value + enterFives) < 0) return;
+                enterFives = value;
+                InvokePropertyChanged("EnterFives");
+                InvokePropertyChanged("EnterTotal");
+                InvokePropertyChanged("CompleteButtonEnabled");
+
+            }
+        }
+
+        private int enterTens;
+        public int EnterTens
+        {
+            get
+            {
+                return enterTens;
+            }
+            set
+            {
+                if ((value + enterTens) < 0) return;
+                enterTens = value;
+                InvokePropertyChanged("EnterTens");
+                InvokePropertyChanged("EnterTotal");
+                InvokePropertyChanged("CompleteButtonEnabled");
+
+            }
+        }
+
+        private int enterTwentys;
+        public int EnterTwentys
+        {
+            get
+            {
+                return enterTwentys;
+            }
+            set
+            {
+                if ((value + enterTwentys) < 0) return;
+                enterTwentys = value;
+                InvokePropertyChanged("EnterTwentys");
+                InvokePropertyChanged("EnterTotal");
+                InvokePropertyChanged("CompleteButtonEnabled");
+
+            }
+        }
+
+        private int enterFiftys;
+        public int EnterFiftys
+        {
+            get
+            {
+                return enterFiftys;
+            }
+            set
+            {
+                if ((value + enterFiftys) < 0) return;
+                enterFiftys = value;
+                InvokePropertyChanged("EnterFiftys");
+                InvokePropertyChanged("EnterTotal");
+                InvokePropertyChanged("CompleteButtonEnabled");
+
+            }
+        }
+
+        private int enterHundreds;
+        public int EnterHundreds
+        {
+            get
+            {
+                return enterHundreds;
+            }
+            set
+            {
+                if ((value + enterHundreds) < 0) return;
+                enterHundreds = value;
+                InvokePropertyChanged("EnterHundreds");
+                InvokePropertyChanged("EnterTotal");
+                InvokePropertyChanged("CompleteButtonEnabled");
+
+            }
+        }
+
         private double enterTotal;
         public double EnterTotal
         {
             get
             {
-                enterTotal = EnterPennies * .01 + EnterDimes * .1 + EnterNickels * .05 + EnterQuarters * .25 + EnterHalfDollars * .5 + EnterDollars;
+                enterTotal = EnterPennies * .01 + EnterDimes * .1 + EnterNickels * .05 + EnterQuarters * .25 + EnterHalfDollars * .5 + EnterDollars
+                    + EnterOnes + EnterTwos * 2 + EnterFives * 5 + EnterTens * 10 + EnterTwentys * 20 + EnterFiftys * 50 + EnterHundreds * 100;
                 return enterTotal;
             }
 

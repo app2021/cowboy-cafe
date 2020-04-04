@@ -9,7 +9,6 @@
     <Grid>
         <StackPanel Orientation="Vertical">
 
-            <TextBlock HorizontalAlignment="Center" FontSize="30" Text="{Binding Path=EnterTotal, StringFormat=c}"/>
             
 
             <StackPanel Orientation="Horizontal">
@@ -33,15 +32,19 @@
 
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
-            <local:BillControl Denomination="One" Quantity="{Binding Path=Ones}"/>
-            <local:BillControl Denomination="Two" Quantity="{Binding Path=Twos}"/>
-            <local:BillControl Denomination="Five" Quantity="{Binding Path=Fives}"/>
-            <local:BillControl Denomination="Ten" Quantity="{Binding Path=Tens}"/>
-            <local:BillControl Denomination="Twenty" Quantity="{Binding Path=Twentys}"/>
-            <local:BillControl Denomination="Fifty" Quantity="{Binding Path=Fiftys}"/>
-            <local:BillControl Denomination="Hundred" Quantity="{Binding Path=Hundreds}"/>
+            <local:BillControl Denomination="One" Quantity="{Binding Path=EnterOnes}"/>
+            <local:BillControl Denomination="Two" Quantity="{Binding Path=EnterTwos}"/>
+            <local:BillControl Denomination="Five" Quantity="{Binding Path=EnterFives}"/>
+            <local:BillControl Denomination="Ten" Quantity="{Binding Path=EnterTens}"/>
+            <local:BillControl Denomination="Twenty" Quantity="{Binding Path=EnterTwentys}"/>
+            <local:BillControl Denomination="Fifty" Quantity="{Binding Path=EnterFiftys}"/>
+            <local:BillControl Denomination="Hundred" Quantity="{Binding Path=EnterHundreds}"/>
         </StackPanel>
-            <Button IsEnabled="{Binding Path=CompleteButtonEnabled}" Name="Complete" FontSize="20" Margin="10" Padding="10">Complete</Button>
+
+            <TextBlock Margin="20" HorizontalAlignment="Center" FontSize="30" Text="{Binding Path=EnterTotal, StringFormat=c}"/>
+
+
+            <Button IsEnabled="{Binding Path=CompleteButtonEnabled}" Name="Complete" FontSize="20" Margin="20" Padding="10">Complete</Button>
 
         </StackPanel>
 

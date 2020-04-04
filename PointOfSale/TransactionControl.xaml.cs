@@ -41,8 +41,9 @@ namespace PointOfSale
             {
                 ReceiptPrinter rp = Register.ReceiptPrinter;
                 String reciept = ReceiptCreator();
-                reciept += "\n Paid by Credit Card";
+                reciept += "\n\nPaid by Credit Card\n\n";
                 rp.Print(reciept);
+
 
                 var orderInfo = this.FindAncestor<OrderControl>();
                 OrderControl od = new OrderControl();
@@ -85,16 +86,15 @@ namespace PointOfSale
 
             Order order = (Order)DataContext;
 
-            string r = "";
+            string r = "\n-------------------";
 
-            r += "Order Number: " + order.OrderNumber;
+            r += "\nOrder Number: " + order.OrderNumber;
 
             foreach(IOrderItem i in order.items)
             {
 
-                r += "\n-------------------\n";
 
-                r += i.ToString() + " " + i.Price + "\n";
+                r += "\n\n" + i.ToString() + " " + i.Price.ToString("C2") + "\n";
 
                 if (i.SpecialInstructions != null)
                 {
@@ -106,11 +106,8 @@ namespace PointOfSale
 
             }
 
-            r += "\n-------------------\n";
-            r += "\nSubtotal: " + order.Subtotal;
-            r += "\nTotal: " + order.Total;
-
-            MessageBox.Show(r);
+            r += "\nSubtotal: " + order.Subtotal.ToString("C2");
+            r += "\nTotal: " + order.Total.ToString("C2");
 
             return r;
         }
