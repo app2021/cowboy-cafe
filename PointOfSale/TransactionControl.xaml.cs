@@ -54,6 +54,8 @@ namespace PointOfSale
                 ReceiptPrinter rp = Register.ReceiptPrinter;
                 String reciept = ReceiptCreator();
                 reciept += "\n\nPaid by Credit Card\n\n";
+                reciept += DateTime.Now.ToString() + "\n\n";
+
                 rp.Print(reciept);
 
 

@@ -43,7 +43,6 @@ namespace PointOfSale
         /// </summary>
         public void complete()
         {
-            String r = WhatsIn();
 
             Pennies = Pennies + EnterPennies;
             Dimes = Dimes + EnterDimes;
@@ -60,13 +59,10 @@ namespace PointOfSale
             Fiftys = Fiftys + EnterFiftys;
             Hundreds = Hundreds + EnterHundreds;
 
-            r += WhatsIn();
 
-            r+= "\n\n"+ ReturnChange();
 
-            r+= WhatsIn();
+            MessageBox.Show(ReturnChange());
 
-            MessageBox.Show(r);
 
             string reciept = Register.Receipt;
 
@@ -74,7 +70,6 @@ namespace PointOfSale
                        +  "\nTotal Change: " + Change.ToString("C02")
                        + "\n\n" + DateTime.Now.ToString() +"\n\n";
 
-            MessageBox.Show(reciept);
 
             ReceiptPrinter rp = Register.ReceiptPrinter;
             rp.Print(reciept);
@@ -292,21 +287,66 @@ namespace PointOfSale
             if (ReturnChange >= .005)
             {
                 PenniesChange++;
-            } 
+            }
 
-            string r = "Hundreds: " + HundredsChange.ToString()
-                        + "\nFifties: " + FiftiesChange.ToString()
-                        + "\nTwenties: " + TwentiesChange.ToString()
-                        + "\nTens: " + TensChange.ToString()
-                        + "\nFives: " + FivesChange.ToString()
-                        + "\nOnes: " + OnesChange.ToString()
-                        + "\nHalf Dollars: " + HalfDollarsChange.ToString()
-                        + "\nQuarters: " + QuartersChange
-                        + "\nDimes: " + DimesChange
-                        + "\nNickels: " + NickelsChange
-                        + "\nPennies: " + PenniesChange
-                        + "\n\n Total Change: " + Change.ToString("C2")
-                        ;
+            string r = "Change due: \n\n";
+
+            if(HundredsChange > 0)
+            {
+                r += "Hundreds: " + HundredsChange;
+            }
+
+            if(FiftiesChange > 0)
+            {
+                r += "\nFifties: " + FiftiesChange;
+            }
+
+            if(TwentiesChange > 0)
+            {
+                r += "\nTwenties: " + TwentiesChange;
+            }
+
+            if(TensChange > 0)
+            {
+                r += "\nTens: " + TensChange;
+            }
+
+            if(FivesChange > 0)
+            {
+                r += "\nFives: " + FivesChange;
+            }
+
+            if(OnesChange > 0)
+            {
+                r += "\nOnes: " + OnesChange;
+            }
+
+            if(HalfDollarsChange > 0)
+            {
+                r += "\nHalf Dollars: " + HalfDollarsChange;
+            }
+
+            if(QuartersChange > 0)
+            {
+                r += "\nQuarters: " + QuartersChange;
+            }
+
+            if(DimesChange > 0)
+            {
+                r += "\nDimes: " + DimesChange;
+            }
+
+            if(NickelsChange > 0)
+            {
+                r += "\nNickels: " + NickelsChange;
+            }
+
+            if(PenniesChange > 0)
+            {
+                r += "\nPennies: " + PenniesChange;
+            }
+
+            r += "\n\n Total Change: " + Change.ToString("C2");
 
             return r;
         }
