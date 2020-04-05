@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: CashRegisterControl.xaml.cs
+ * Purpose: Interaction logic for CashRegisterControl.xaml
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -30,6 +36,11 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// When complete button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void OnCompleteClicked(object sender, RoutedEventArgs e)
         {
 

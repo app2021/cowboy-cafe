@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: CashRegisterModelView.cs
+ * Purpose: The Cash Register Model View
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
@@ -11,6 +18,9 @@ using System.Windows.Controls;
 
 namespace PointOfSale
 {
+    /// <summary>
+    /// Interaction logic for  cash regisiter model view
+    /// </summary>
     public class CashRegisterModelView: INotifyPropertyChanged
     {
         /// <summary>
@@ -28,6 +38,9 @@ namespace PointOfSale
         /// </summary>
         public double TotalValue => drawer.TotalValue;
 
+        /// <summary>
+        /// When the complete button is pressed
+        /// </summary>
         public void complete()
         {
             String r = WhatsIn();
@@ -67,7 +80,9 @@ namespace PointOfSale
             rp.Print(reciept);
         }
 
-        private bool completeButtonEnabled;
+        /// <summary>
+        /// Whether or not the complete button should be enabled
+        /// </summary>
         public bool CompleteButtonEnabled
         {
             get
@@ -81,6 +96,9 @@ namespace PointOfSale
             }
         } 
 
+        /// <summary>
+        /// the amount of change due a customer
+        /// </summary>
         public double Change
         {
             get
@@ -90,7 +108,11 @@ namespace PointOfSale
         }
 
 
-
+        /// <summary>
+        /// Calculates the amount of change due the customer and subtracts it from the cash
+        /// register
+        /// </summary>
+        /// <returns>A string of the bills and coins to return</returns>
         public string ReturnChange()
         {
             double ReturnChange = Change;
@@ -256,7 +278,7 @@ namespace PointOfSale
             if(PenniesChange >= Pennies)
             {
                 ReturnChange = ReturnChange - (Pennies * .01);
-                
+                PenniesChange = Pennies;
                 Pennies = 0;
 
             }
@@ -267,6 +289,10 @@ namespace PointOfSale
 
             }
 
+            if (ReturnChange >= .005)
+            {
+                PenniesChange++;
+            } 
 
             string r = "Hundreds: " + HundredsChange.ToString()
                         + "\nFifties: " + FiftiesChange.ToString()
@@ -285,6 +311,10 @@ namespace PointOfSale
             return r;
         }
 
+        /// <summary>
+        /// For error checking. Displays what's in the Cashdrawer.
+        /// </summary>
+        /// <returns>String of what's in the Cash Drawer</returns>
         public string WhatsIn()
         {
             string r = "\n\nHundreds: " + Hundreds
@@ -304,7 +334,9 @@ namespace PointOfSale
             return r;
         }
 
-
+        /// <summary>
+        /// The total of the order
+        /// </summary>
         public double Total
         {
             get
@@ -314,6 +346,9 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// The order number of the order
+        /// </summary>
         public uint OrderNumber
         {
             get
@@ -324,7 +359,9 @@ namespace PointOfSale
 
 
 
-
+        /// <summary>
+        /// Amount that the customer provides
+        /// </summary>
         private int enterPennies;
         public int EnterPennies
         {
@@ -344,6 +381,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Amount that the customer provides
+        /// </summary>
         private int enterDimes;
         public int EnterDimes
         {
@@ -363,6 +403,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Amount that the customer provides
+        /// </summary>
         private int enterNickels;
         public int EnterNickels
         {
@@ -381,6 +424,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Amount that the customer provides
+        /// </summary>
         private int enterQuarters;
         public int EnterQuarters
         {
@@ -399,6 +445,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Amount that the customer provides
+        /// </summary>
         private int enterHalfDollars;
         public int EnterHalfDollars
         {
@@ -417,6 +466,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Amount that the customer provides
+        /// </summary>
         private int enterDollars;
         public int EnterDollars
         {
@@ -453,6 +505,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Amount that the customer provides
+        /// </summary>
         private int enterTwos;
         public int EnterTwos
         {
@@ -470,6 +525,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Amount that the customer provides
+        /// </summary>
         private int enterFives;
         public int EnterFives
         {
@@ -488,6 +546,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Amount that the customer provides
+        /// </summary>
         private int enterTens;
         public int EnterTens
         {
@@ -506,6 +567,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Amount that the customer provides
+        /// </summary>
         private int enterTwentys;
         public int EnterTwentys
         {
@@ -524,6 +588,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Amount that the customer provides
+        /// </summary>
         private int enterFiftys;
         public int EnterFiftys
         {
@@ -542,6 +609,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Amount that the customer provides
+        /// </summary>
         private int enterHundreds;
         public int EnterHundreds
         {
@@ -560,6 +630,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// The total amount that the customer provides
+        /// </summary>
         private double enterTotal;
         public double EnterTotal
         {

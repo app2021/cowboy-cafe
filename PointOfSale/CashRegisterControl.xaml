@@ -11,12 +11,12 @@
 
             
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="20">
                 <TextBlock FontSize="30">Order Number:</TextBlock>
                 <TextBlock Margin="10,0,10,0" Text="{Binding Path=OrderNumber}" FontSize="30"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="20">
                 <TextBlock FontSize="30">Total:</TextBlock>
                 <TextBlock Margin="10,0,10,0" Text="{Binding Path=Total, StringFormat=c}" FontSize="30"/>
             </StackPanel>
@@ -44,7 +44,7 @@
             <TextBlock Margin="20" HorizontalAlignment="Center" FontSize="30" Text="{Binding Path=EnterTotal, StringFormat=c}"/>
 
 
-            <Button IsEnabled="{Binding Path=CompleteButtonEnabled}" Name="Complete" FontSize="20" Margin="20" Padding="10">Complete</Button>
+            <Button Width="300" Height="80" IsEnabled="{Binding Path=CompleteButtonEnabled}" Name="Complete" FontSize="30" Margin="20" Padding="10">Complete</Button>
 
         </StackPanel>
 

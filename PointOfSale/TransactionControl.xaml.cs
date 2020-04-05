@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: TransactionControl.xaml.cs
+ * Purpose: Interaction logic for TransactionControl.xaml
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -30,6 +37,11 @@ namespace PointOfSale
             CancelButton.Click += OnCancelButtonClicked;
         }
 
+        /// <summary>
+        /// When the credit button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void OnCreditButtonClicked(object sender, RoutedEventArgs e)
         {
             CardTerminal card = new CardTerminal();
@@ -56,6 +68,11 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// When the Cash button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void OnCashButtonClicked(object sender, RoutedEventArgs e)
         {
 
@@ -73,6 +90,11 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// When the cancel button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void OnCancelButtonClicked(object sender, RoutedEventArgs e)
         {
             var orderInfo = this.FindAncestor<OrderControl>();
@@ -81,6 +103,10 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// prints receipt template to a string
+        /// </summary>
+        /// <returns>string of the receipt</returns>
         string ReceiptCreator()
         {
 
@@ -88,13 +114,13 @@ namespace PointOfSale
 
             string r = "\n-------------------";
 
-            r += "\nOrder Number: " + order.OrderNumber;
+            r += "\nOrder Number: " + order.OrderNumber + "\n";
 
             foreach(IOrderItem i in order.items)
             {
 
 
-                r += "\n\n" + i.ToString() + " " + i.Price.ToString("C2") + "\n";
+                r += "\n" + i.ToString() + " " + i.Price.ToString("C2") + "\n";
 
                 if (i.SpecialInstructions != null)
                 {

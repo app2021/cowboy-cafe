@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Nickolas Appino
  * Class: OrderControl.xaml.cs
- * Purpose: Currently unused 
+ * Purpose: Interaction logic  
  */ 
 
 using System;
@@ -32,27 +32,35 @@ namespace PointOfSale
             var data = new Order();
             this.DataContext = data;
 
-
-
             CancelOrderButton.Click += OnCancelOrderButtonClicked;
             CompleteOrderButton.Click += OnCompleteOrderButtonClicked;
             ItemSelectionButton.Click += OnItemSelectionButtonClicked;
 
-
-
-
         }
 
+        /// <summary>
+        /// To swap the screen
+        /// </summary>
+        /// <param name="element"></param>
         public void SwapScreen(UIElement element)
         {
             Container.Child = element;
         }
 
+        /// <summary>
+        /// To swap the screen
+        /// </summary>
+        /// <param name="element"></param>
         public void SwapOrderSum(UIElement element)
         {
             OutsideBorder.Child = element;
         }
 
+        /// <summary>
+        /// When Item slection button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void OnItemSelectionButtonClicked(object sender, RoutedEventArgs e)
         {
 

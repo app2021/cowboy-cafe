@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: BillControl.xaml.cs
+ * Purpose: Interaction logic for BillControl.xaml
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
