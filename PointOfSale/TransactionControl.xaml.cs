@@ -88,7 +88,7 @@ namespace PointOfSale
             Register.Receipt = ReceiptCreator();
 
             orderControl.SwapOrderSum(screen);
-
+             
 
         }
 

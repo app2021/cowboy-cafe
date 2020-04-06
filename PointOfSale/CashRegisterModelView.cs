@@ -102,7 +102,7 @@ namespace PointOfSale
             }
         }
 
-
+        
         /// <summary>
         /// Calculates the amount of change due the customer and subtracts it from the cash
         /// register
@@ -422,7 +422,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Amount that the customer provides
+        /// Amount that the customer provides 
         /// </summary>
         private int enterDimes;
         public int EnterDimes
@@ -805,7 +805,7 @@ namespace PointOfSale
                 InvokePropertyChanged("Dollars");
             }
         }
-
+        
         /// <summary>
         /// Gets or sets the number of ones in the cash register
         /// </summary>
