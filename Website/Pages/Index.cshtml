@@ -15,16 +15,93 @@
     </p>
 </div>
 
-<h2>Combos</h2>
+<h2>Combos</h2><br />
 
-<h2>Entrees</h2>
+<h2>Entrees</h2><br />
 
-@Html.Raw(@IndexModel.Entrees())
 
-<h2>Sides</h2>
+@{
 
-@Html.Raw(@IndexModel.Sides())
+    IEnumerable<IOrderItem> Entrees = Menu.Entrees();
 
-<h2>Drinks</h2>
+    foreach (var item in Entrees)
+    {
 
-@Html.Raw(@IndexModel.Drinks())
+ 
+        <div class="menu-item">
+            <b>@item</b> <br/>
+            Calories: @item.Calories <br/>
+            Price: @item.Price.ToString("c")<br /><br />
+        </div>
+
+
+    }
+}
+
+<h2>Sides</h2><br />
+
+@{
+
+    IEnumerable<IOrderItem> Sides = Menu.Sides();
+
+    foreach (var item in Sides)
+    {
+
+        item.Size = Size.Small;
+        <div class="menu-item">
+            <b>@item</b><br>
+            Calories: @item.Calories <br>
+            Price: @item.Price.ToString("c")<br /><br />
+        </div>
+
+        item.Size = Size.Medium;
+        <div class="menu-item">
+            <b>@item</b><br>
+            Calories: @item.Calories <br>
+            Price: @item.Price.ToString("c")<br /><br />
+        </div>
+
+        item.Size = Size.Large;
+        <div class="menu-item">
+            <b>@item</b><br>
+            Calories: @item.Calories <br>
+            Price: @item.Price.ToString("c") <br /><br />
+        </div>
+
+    }
+}
+
+<h2>Drinks</h2><br />
+
+@{
+
+    IEnumerable<IOrderItem> Drinks = Menu.Drinks();
+
+    foreach (var item in Drinks)
+    {
+
+        item.Size = Size.Small;
+        <div class="menu-item">
+            <b>@item</b><br>
+            Calories: @item.Calories <br>
+            Price: @item.Price.ToString("c")<br /><br />
+        </div>
+
+        item.Size = Size.Medium;
+        <div class="menu-item">
+            <b>@item</b><br>
+            Calories: @item.Calories <br>
+            Price: @item.Price.ToString("c")<br /><br />
+        </div>
+
+        item.Size = Size.Large;
+        <div class="menu-item">
+            <b>@item</b> <br>
+            Calories: @item.Calories <br>
+            Price: @item.Price.ToString("c") <br /><br />
+        </div>
+
+    }
+}
+
+
