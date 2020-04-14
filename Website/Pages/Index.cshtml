@@ -1,10 +1,30 @@
-﻿@page
+﻿
+@page
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Cowboy Cafe</h1>
+    <p>
+        We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
+        Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
+        Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger!
+        You’ve had a hard ride - so take it easy with us.
+    </p>
 </div>
+
+<h2>Combos</h2>
+
+<h2>Entrees</h2>
+
+@Html.Raw(@IndexModel.Entrees())
+
+<h2>Sides</h2>
+
+@Html.Raw(@IndexModel.Sides())
+
+<h2>Drinks</h2>
+
+@Html.Raw(@IndexModel.Drinks())

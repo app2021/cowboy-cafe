@@ -40,6 +40,8 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
 
+        public Size Size { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
 
         /// <summary>
         /// Fancy method to handle the Property Change Event Args
@@ -50,6 +52,7 @@ namespace CowboyCafe.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
         }
+
 
 
     }
