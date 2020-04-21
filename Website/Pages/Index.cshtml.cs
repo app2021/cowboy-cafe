@@ -44,7 +44,7 @@ namespace Website.Pages
         public IEnumerable<IOrderItem> MenuDisplay { get; protected set; }
 
 
-        public void OnGet(double? CaloriesMin, double? CaloriesMax, double? PriceMin, double? PriceMax, bool Entree, bool Side, bool Drink)
+        public void OnGet(double? CaloriesMin, double? CaloriesMax, double? PriceMin, double? PriceMax)
         {
 
 
@@ -60,6 +60,8 @@ namespace Website.Pages
             TypeOfItem = Request.Query["TypeOfItem"];
             SearchTerms = Request.Query["SearchTerms"];
 
+            MenuDisplay = Menu.FilterByType(MenuDisplay, TypeOfItem);
+            MenuDisplay = Menu.Search(MenuDisplay, SearchTerms);
             MenuDisplay = Menu.FilterByPrice(MenuDisplay, PriceMin, PriceMax);
             MenuDisplay = Menu.FilterByCalories(MenuDisplay, CaloriesMin, CaloriesMax);
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace CowboyCafe.Data
 {
@@ -24,39 +25,10 @@ namespace CowboyCafe.Data
         public static IEnumerable<IOrderItem> Sides()
         {
             List<IOrderItem> items = new List<IOrderItem>();
-            items.Add(new ChiliCheeseFries());
-            items.Add(new CornDodgers());
-            items.Add(new PanDeCampo());
-            items.Add(new BakedBeans());
-
-            return items.ToArray();
-        }
-
-        public static IEnumerable<IOrderItem> Drinks()
-        {
-            List<IOrderItem> items = new List<IOrderItem>();
-            items.Add(new JerkedSoda());
-            items.Add(new TexasTea());
-            items.Add(new CowboyCoffee());
-            items.Add(new Water());
-
-            return items.ToArray();
-        }
-
-        public static IEnumerable<IOrderItem> CompleteMenu()
-        {
-            List<IOrderItem> items = new List<IOrderItem>();
-            items.Add(new CowpokeChili());
-            items.Add(new RustlersRibs());
-            items.Add(new PecosPulledPork());
-            items.Add(new TrailBurger());
-            items.Add(new DakotaDoubleBurger());
-            items.Add(new TexasTripleBurger());
-            items.Add(new AngryChicken());
 
             IOrderItem SmallChiliCheeseFries = new ChiliCheeseFries();
             items.Add(SmallChiliCheeseFries);
-            
+
             IOrderItem MediumChiliCheeseFries = new ChiliCheeseFries();
             MediumChiliCheeseFries.Size = Size.Medium;
             items.Add(MediumChiliCheeseFries);
@@ -97,6 +69,13 @@ namespace CowboyCafe.Data
             IOrderItem LargeBakedBeans = new BakedBeans();
             LargeBakedBeans.Size = Size.Large;
             items.Add(LargeBakedBeans);
+
+            return items.ToArray();
+        }
+
+        public static IEnumerable<IOrderItem> Drinks()
+        {
+            List<IOrderItem> items = new List<IOrderItem>();
 
             IOrderItem SmallJerkedSoda = new JerkedSoda();
             items.Add(SmallJerkedSoda);
@@ -142,7 +121,30 @@ namespace CowboyCafe.Data
             LargeWater.Size = Size.Large;
             items.Add(LargeWater);
 
-           
+            return items.ToArray();
+        }
+
+        public static IEnumerable<IOrderItem> CompleteMenu()
+        {
+            List<IOrderItem> items = new List<IOrderItem>();
+
+            IEnumerable<IOrderItem> Entrees = Menu.Entrees();
+            foreach (IOrderItem item in Entrees)
+            {
+                items.Add(item);
+            }
+
+            IEnumerable<IOrderItem> Sides = Menu.Sides();
+            foreach (IOrderItem item in Sides)
+            {
+                items.Add(item);
+            }
+
+            IEnumerable<IOrderItem> Drinks = Menu.Drinks();
+            foreach (IOrderItem item in Drinks)
+            {
+                items.Add(item);
+            }
 
             return items.ToArray();
         }
@@ -240,6 +242,63 @@ namespace CowboyCafe.Data
             return null;
         }
 
+        public static IEnumerable<IOrderItem> Search(IEnumerable<IOrderItem> MenuDisplay, string terms)
+        {
+            // TODO: Search database
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            // Return all movies if there are no search terms
+            if (terms == null) return MenuDisplay;
+
+            // return each movie in the database containing the terms substring
+            foreach (IOrderItem item in MenuDisplay)
+            {
+                if (item.ToString() != null && item.ToString().Contains(terms, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
+        }
+
+        public static IEnumerable<IOrderItem> FilterByType(IEnumerable<IOrderItem> MenuDisplay, string[] types)
+        {
+            if (types == null || types.Count() == 0) return MenuDisplay;
+
+            List<IOrderItem> items = new List<IOrderItem>();
+
+            if (types.Contains("Entree"))
+            {
+                IEnumerable<IOrderItem> Entrees = Menu.Entrees();
+                foreach(IOrderItem item in Entrees)
+                {
+                    items.Add(item);
+                }
+            }
+
+            if(types.Contains("Side"))
+            {
+                IEnumerable<IOrderItem> Sides = Menu.Sides();
+                foreach (IOrderItem item in Sides)
+                {
+                    items.Add(item);
+                }
+            }
+
+            if (types.Contains("Drink"))
+            {
+                IEnumerable<IOrderItem> Drinks = Menu.Drinks();
+                foreach (IOrderItem item in Drinks)
+                {
+                    items.Add(item);
+                }
+
+            }
+
+            return items;
+
+        }
 
     }
 }

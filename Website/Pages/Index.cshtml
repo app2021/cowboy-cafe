@@ -7,7 +7,7 @@
 
 <div class="text-center">
     <h1 class="display-4">Cowboy Cafe</h1>
-    <p>
+    <p class="m-3">
         We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
         Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
         Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger!
@@ -28,7 +28,7 @@
             @foreach (String type in Menu.TypeOfItem)
             {
                 <label class="m-1">
-                    <input type="checkbox" name="TypeOfItem" value="type" />
+                    <input type="checkbox" name="TypeOfItem" value="@type" />
                     @type
                 </label>
             }
@@ -46,9 +46,9 @@
 
         <div class="m-2">
             Price: Between
-            <input name="PriceMin" type="number" min="0" max="100" step="0.1" placeholder="min" />
+            <input name="PriceMin" type="number" min="0" max="100" step="0.01" placeholder="min" />
             and
-            <input name="PriceMax" type="number" min="0" max="100" step="0.1" placeholder="max" />
+            <input name="PriceMax" type="number" min="0" max="100" step="0.01" placeholder="max" />
         </div>
 
         <div class="m-3">
@@ -61,8 +61,7 @@
 
 
 
-    <h3 class="border-bottom">Entrees</h3>
-    <br />
+    <h3 class="border-bottom p-2 m-3">Entrees</h3>
 
     <div class="d-flex flex-row flex-wrap">
         @{
@@ -84,9 +83,7 @@
         }
     </div>
 
-    <br />
-    <h3>Sides</h3>
-    <br/>
+    <h3 class="border-bottom p-2 m-3">Sides</h3>
 
     <div class="d-flex flex-row flex-wrap">
         @{
@@ -108,9 +105,7 @@
         }
     </div>
 
-    <br/>
-    <h3>Drinks</h3>
-    <br/>
+    <h3 class="border-bottom p-2 m-3">Drinks</h3>
 
     <div class="d-flex flex-row flex-wrap">
         @{
