@@ -17,93 +17,121 @@
 
 <div class="text-center">
 
+    <form class="flex-column border m-2">
 
-    <h2>Entrees</h2><br />
-
-
-    @{
-
-        IEnumerable<IOrderItem> Entrees = Menu.Entrees();
-
-        foreach (var item in Entrees)
-        {
+        <h2 class="m-2">Menu Search</h2>
 
 
-            <div class="menu-item">
-                <b>@item</b> <br />
-                Calories: @item.Calories <br />
-                Price: @item.Price.ToString("c")<br /><br />
-            </div>
 
 
+        <div class="m-3">
+            @foreach (String type in Menu.TypeOfItem)
+            {
+                <label class="m-1">
+                    <input type="checkbox" name="TypeOfItem" value="type" />
+                    @type
+                </label>
+            }
+        </div>
+
+
+
+        <div class="m-2">
+
+            Calories: Between
+            <input name="CaloriesMin" type="number" min="0" max="2000" step="0.1" placeholder="min" />
+            and
+            <input name="CaloriesMax" type="number" min="0" max="2000" step="0.1" placeholder="max" />
+        </div>
+
+        <div class="m-2">
+            Price: Between
+            <input name="PriceMin" type="number" min="0" max="100" step="0.1" placeholder="min" />
+            and
+            <input name="PriceMax" type="number" min="0" max="100" step="0.1" placeholder="max" />
+        </div>
+
+        <div class="m-3">
+            <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+            <input type="submit" value="Search">
+        </div>
+
+
+    </form>
+
+
+
+    <h3 class="border-bottom">Entrees</h3>
+    <br />
+
+    <div class="d-flex flex-row flex-wrap">
+        @{
+            foreach (var item in Model.MenuDisplay)
+
+            {
+                var myObject = item as Entree;
+
+                if (myObject != null)
+                {
+                    <div class="menu-item p-3 m-2 border">
+                        <h4>@item</h4> <br />
+                        Calories: @item.Calories <br />
+                        Price: @item.Price.ToString("c")<br />
+                    </div>
+
+                }
+            }
         }
-    }
+    </div>
 
-    <h2>Sides</h2><br />
+    <br />
+    <h3>Sides</h3>
+    <br/>
 
-    @{
+    <div class="d-flex flex-row flex-wrap">
+        @{
+            foreach (var item in Model.MenuDisplay)
 
-        IEnumerable<IOrderItem> Sides = Menu.Sides();
+            {
+                var myObject = item as Side;
 
-        foreach (var item in Sides)
-        {
+                if (myObject != null)
+                {
+                    <div class="menu-item p-3 m-2 border">
+                        <h4>@item</h4> <br />
+                        Calories: @item.Calories <br />
+                        Price: @item.Price.ToString("c")
+                    </div>
 
-            item.Size = Size.Small;
-            <div class="menu-item">
-                <b>@item</b><br>
-                Calories: @item.Calories <br>
-                Price: @item.Price.ToString("c")<br /><br />
-            </div>
-
-            item.Size = Size.Medium;
-            <div class="menu-item">
-                <b>@item</b><br>
-                Calories: @item.Calories <br>
-                Price: @item.Price.ToString("c")<br /><br />
-            </div>
-
-            item.Size = Size.Large;
-            <div class="menu-item">
-                <b>@item</b><br>
-                Calories: @item.Calories <br>
-                Price: @item.Price.ToString("c") <br /><br />
-            </div>
-
+                }
+            }
         }
-    }
+    </div>
 
-    <h2>Drinks</h2><br />
+    <br/>
+    <h3>Drinks</h3>
+    <br/>
 
-    @{
+    <div class="d-flex flex-row flex-wrap">
+        @{
+            foreach (var item in Model.MenuDisplay)
 
-        IEnumerable<IOrderItem> Drinks = Menu.Drinks();
+            {
+                var myObject = item as Drink;
 
-        foreach (var item in Drinks)
-        {
+                if (myObject != null)
+                {
+                    <div class="menu-item p-3 m-2 border">
+                        <h4>@item</h4> <br />
+                        Calories: @item.Calories <br />
+                        Price: @item.Price.ToString("c")
+                    </div>
 
-            item.Size = Size.Small;
-            <div class="menu-item">
-                <b>@item</b><br>
-                Calories: @item.Calories <br>
-                Price: @item.Price.ToString("c")<br /><br />
-            </div>
-
-            item.Size = Size.Medium;
-            <div class="menu-item">
-                <b>@item</b><br>
-                Calories: @item.Calories <br>
-                Price: @item.Price.ToString("c")<br /><br />
-            </div>
-
-            item.Size = Size.Large;
-            <div class="menu-item">
-                <b>@item</b> <br>
-                Calories: @item.Calories <br>
-                Price: @item.Price.ToString("c") <br /><br />
-            </div>
-
+                }
+            }
         }
-    }
+    </div>
+
 
 </div>
 

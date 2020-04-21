@@ -19,8 +19,50 @@ namespace Website.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+
+
+
+
+        [BindProperty]
+        public string SearchTerms { get; set; } = "";
+
+        [BindProperty]
+        public string[] TypeOfItem { get; set; }
+
+        [BindProperty]
+        public double? CaloriesMin { get; set; }
+
+        [BindProperty]
+        public double? CaloriesMax { get; set; }
+
+        [BindProperty]
+        public double? PriceMin { get; set; }
+
+        [BindProperty]
+        public double? PriceMax { get; set; }
+
+        public IEnumerable<IOrderItem> MenuDisplay { get; protected set; }
+
+
+        public void OnGet(double? CaloriesMin, double? CaloriesMax, double? PriceMin, double? PriceMax, bool Entree, bool Side, bool Drink)
         {
+
+
+            MenuDisplay = Menu.CompleteMenu();
+
+
+            this.CaloriesMin = CaloriesMin;
+            this.CaloriesMax = CaloriesMax;
+            
+            this.PriceMin = PriceMin;
+            this.PriceMax = PriceMax;
+
+            TypeOfItem = Request.Query["TypeOfItem"];
+            SearchTerms = Request.Query["SearchTerms"];
+
+            MenuDisplay = Menu.FilterByPrice(MenuDisplay, PriceMin, PriceMax);
+            MenuDisplay = Menu.FilterByCalories(MenuDisplay, CaloriesMin, CaloriesMax);
+
 
         }
 
