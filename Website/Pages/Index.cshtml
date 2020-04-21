@@ -28,7 +28,7 @@
             @foreach (String type in Menu.TypeOfItem)
             {
                 <label class="m-1">
-                    <input type="checkbox" name="TypeOfItem" value="@type" />
+                    <input type="checkbox" name="TypeOfItem" value="@type" checked="@Model.TypeOfItem.Contains(type)"/>
                     @type
                 </label>
             }
@@ -39,16 +39,16 @@
         <div class="m-2">
 
             Calories: Between
-            <input name="CaloriesMin" type="number" min="0" max="2000" step="0.1" placeholder="min" />
+            <input name="CaloriesMin" type="number" min="0" max="2000" step="0.1" placeholder="min" value="@Model.CaloriesMin" />
             and
-            <input name="CaloriesMax" type="number" min="0" max="2000" step="0.1" placeholder="max" />
+            <input name="CaloriesMax" type="number" min="0" max="2000" step="0.1" placeholder="max" value="@Model.CaloriesMax"/>
         </div>
 
         <div class="m-2">
             Price: Between
-            <input name="PriceMin" type="number" min="0" max="100" step="0.01" placeholder="min" />
+            <input name="PriceMin" type="number" min="0" max="100" step="0.01" placeholder="min" value="@Model.PriceMin" />
             and
-            <input name="PriceMax" type="number" min="0" max="100" step="0.01" placeholder="max" />
+            <input name="PriceMax" type="number" min="0" max="100" step="0.01" placeholder="max" value="@Model.PriceMax" />
         </div>
 
         <div class="m-3">
