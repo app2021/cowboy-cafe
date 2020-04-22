@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Nickolas Appino
+ * Class: Menu.cs
+ * Purpose: Static class used by the website
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
@@ -7,6 +13,10 @@ namespace CowboyCafe.Data
 {
     public static class Menu
     {
+        /// <summary>
+        /// The entres in the menu
+        /// </summary>
+        /// <returns>A list of the entrees in the menu</returns>
         public static IEnumerable<IOrderItem> Entrees(){
 
             List<IOrderItem> items = new List<IOrderItem>();
@@ -22,6 +32,10 @@ namespace CowboyCafe.Data
             
         }
 
+        /// <summary>
+        /// List of all the sides
+        /// </summary>
+        /// <returns>List of all the sides</returns>
         public static IEnumerable<IOrderItem> Sides()
         {
             List<IOrderItem> items = new List<IOrderItem>();
@@ -73,6 +87,10 @@ namespace CowboyCafe.Data
             return items.ToArray();
         }
 
+        /// <summary>
+        /// List of all the drinks
+        /// </summary>
+        /// <returns>List of all the drinks</returns>
         public static IEnumerable<IOrderItem> Drinks()
         {
             List<IOrderItem> items = new List<IOrderItem>();
@@ -124,6 +142,10 @@ namespace CowboyCafe.Data
             return items.ToArray();
         }
 
+        /// <summary>
+        /// lisof the complete menu
+        /// </summary>
+        /// <returns>List of the complete menu</returns>
         public static IEnumerable<IOrderItem> CompleteMenu()
         {
             List<IOrderItem> items = new List<IOrderItem>();
@@ -159,6 +181,13 @@ namespace CowboyCafe.Data
             };
         }
 
+        /// <summary>
+        /// Filters menu by price
+        /// </summary>
+        /// <param name="MenuDisplay">the menu to be filtered</param>
+        /// <param name="min">the minimum price</param>
+        /// <param name="max">the maximum price</param>
+        /// <returns>the filtered menu</returns>
         public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> MenuDisplay, double? min, double? max)
         {
             if (min == null && max == null) return MenuDisplay;
@@ -193,6 +222,13 @@ namespace CowboyCafe.Data
             return results;
         }
 
+        /// <summary>
+        /// Filteres menu by calories
+        /// </summary>
+        /// <param name="MenuDisplay">the menu to be filtered</param>
+        /// <param name="min">the minimum calories</param>
+        /// <param name="max">the maximum calories</param>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> MenuDisplay, double? min, double? max)
         {
             if (min == null && max == null) return MenuDisplay;
@@ -227,21 +263,14 @@ namespace CowboyCafe.Data
             return results;
         }
 
-        public static IEnumerable<IOrderItem> FilterByTypeOfItem(IEnumerable<IOrderItem> MenuDisplay, IEnumerable<string> TypeOfItem)
-        {
 
 
-            if (TypeOfItem == null) return MenuDisplay;
-
-            List<IOrderItem> results = new List<IOrderItem>();
-
-            foreach(IOrderItem item in MenuDisplay)
-            {
-            }
-
-            return null;
-        }
-
+        /// <summary>
+        /// Filtered menu by a string
+        /// </summary>
+        /// <param name="MenuDisplay">The menu to be filtered</param>
+        /// <param name="terms">The string to fitler by</param>
+        /// <returns>The filtered menu</returns>
         public static IEnumerable<IOrderItem> Search(IEnumerable<IOrderItem> MenuDisplay, string terms)
         {
             // TODO: Search database
@@ -262,6 +291,12 @@ namespace CowboyCafe.Data
             return results;
         }
 
+        /// <summary>
+        /// Filters menu by type of item
+        /// </summary>
+        /// <param name="MenuDisplay">The menu to filter</param>
+        /// <param name="types">The type of item to filter by</param>
+        /// <returns>The filtered menu</returns>
         public static IEnumerable<IOrderItem> FilterByType(IEnumerable<IOrderItem> MenuDisplay, string[] types)
         {
             if (types == null || types.Count() == 0) return MenuDisplay;

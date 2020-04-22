@@ -1,5 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+/*
+ * Author: Nickolas Appino
+ * Class: Index.cshtml.cs
+ * Purpose: Interaction logic for index page
+ */
+
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -22,28 +28,51 @@ namespace Website.Pages
 
 
 
-
+        /// <summary>
+        /// The terms to search for
+        /// </summary>
         [BindProperty]
         public string SearchTerms { get; set; } = "";
 
+        /// <summary>
+        /// The types of items
+        /// </summary>
         [BindProperty]
         public string[] TypeOfItem { get; set; }
 
+        /// <summary>
+        /// The minimum calories
+        /// </summary>
         [BindProperty]
         public double? CaloriesMin { get; set; }
 
+        /// <summary>
+        /// The max calories
+        /// </summary>
         [BindProperty]
         public double? CaloriesMax { get; set; }
 
+        /// <summary>
+        /// The min price
+        /// </summary>
         [BindProperty]
         public double? PriceMin { get; set; }
 
+        /// <summary>
+        /// The max price
+        /// </summary>
         [BindProperty]
         public double? PriceMax { get; set; }
 
         public IEnumerable<IOrderItem> MenuDisplay { get; protected set; }
 
-
+        /// <summary>
+        /// When the pages loads
+        /// </summary>
+        /// <param name="CaloriesMin">Min Calories</param>
+        /// <param name="CaloriesMax">Max Calories</param>
+        /// <param name="PriceMin">Min Price</param>
+        /// <param name="PriceMax">Max Price</param>
         public void OnGet(double? CaloriesMin, double? CaloriesMax, double? PriceMin, double? PriceMax)
         {
 
