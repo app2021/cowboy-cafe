@@ -13,6 +13,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
         public new double Price { get; set; }
         public new List<string> SpecialInstructions { get; set; }
 
+        public uint Calories { get; set; }
+
+        public Size Size { get; set; }
     }
 
     public class OrderPropertyChangedTest
