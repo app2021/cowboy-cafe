@@ -10,33 +10,55 @@ namespace CowboyCafe.DataTests
     public class MenuTests
     {
 
-        //Test menu entree cointains all entress
+        //Test entree cointains all entress
 
         [Fact]
-        public void MenuEntreeContainsAllEntrees(){
-            IEnumerable<IOrderItem> menu = Menu.Entrees();
-            foreach(IOrderItem i in menu)
+        public void EntreeMenuContainsAllEntrees(){
+
+            IEnumerable<IOrderItem> entrees = Menu.Entrees();
+
+            foreach(IOrderItem e in entrees)
             {
-                Assert.Contains(i, menu);
+                Assert.IsAssignableFrom<Entree>(e);
+
             }
+            
         }
 
+        //Entree should contain 7 items
 
         [Fact]
-        public void TestSearch()
+        public void EntreeContinsSevenItems()
         {
-            IEnumerable<IOrderItem> menu = Menu.CompleteMenu();
+            IEnumerable<IOrderItem> entrees = Menu.Entrees();
 
-            IEnumerable<IOrderItem> search = Menu.Search(menu, "Ribs");
+            Assert.True(entrees.Count() == 7);
+        }
 
-            foreach(IOrderItem i in search)
+
+        //Test side contains all sides
+
+        [Fact]
+        public void SideMenuContainsAllSides()
+        {
+            IEnumerable<IOrderItem> sides = Menu.Sides();
+
+            foreach (IOrderItem i in sides)
             {
-                Assert.Contains(i, search);
+                Assert.IsAssignableFrom<Side>(i);
+
             }
         }
 
-        [Theory]
+        //Test side contains 12 items
 
+        [Fact]
+        public void TestSideContainsTwelveItems()
+        {
+            IEnumerable<IOrderItem> side = Menu.Sides();
+
+            Assert.True(side.Count() == 12);
+        }
 
 
 
