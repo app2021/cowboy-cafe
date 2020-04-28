@@ -264,6 +264,36 @@ namespace CowboyCafe.DataTests
 
         }
 
+        // FilterByCalories should return correct result
+
+        [Fact]
+        public void FilterByCaloriesShouldReturnCorrectResults()
+        {
+
+            IEnumerable<IOrderItem> menu = Menu.CompleteMenu();
+
+            IEnumerable<IOrderItem> result = Menu.FilterByCalories(menu, 100, 200);
+
+            foreach(IOrderItem i in result)
+            {
+                Assert.True(i.Calories < 200 && i.Calories > 100);
+            }
+        }
+
+        //FilterByPrice should return correct results
+
+        [Fact]
+        public void FilterByPriceShouldReturnCorrectResults()
+        {
+            IEnumerable<IOrderItem> menu = Menu.CompleteMenu();
+
+            IEnumerable<IOrderItem> result = Menu.FilterByPrice(menu, 100, 200);
+
+            foreach (IOrderItem i in result)
+            {
+                Assert.True(i.Price < 200 && i.Price > 100);
+            }
+        }
 
     }
 }
