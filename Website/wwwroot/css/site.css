@@ -71,5 +71,20 @@ body {
 }
 
 .menu-item {
+    border:double;
+    padding:8px;
+    margin: 4px;
+}
 
+.flex-columns {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+@media(max-width: 490px){
+    .flex-columns{
+        flex-direction:column;
+    }
 }

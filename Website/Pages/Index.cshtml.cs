@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using CowboyCafe.Data;
 using System.Text;
+using System.Reflection.Metadata;
 
 namespace Website.Pages
 {
@@ -27,6 +28,7 @@ namespace Website.Pages
 
 
 
+        #region Variables
 
         /// <summary>
         /// The terms to search for
@@ -66,6 +68,8 @@ namespace Website.Pages
 
         public IEnumerable<IOrderItem> MenuDisplay { get; protected set; }
 
+        #endregion 
+
         /// <summary>
         /// When the pages loads
         /// </summary>
@@ -79,6 +83,7 @@ namespace Website.Pages
 
             MenuDisplay = Menu.CompleteMenu();
 
+            #region Variables
 
             this.CaloriesMin = CaloriesMin;
             this.CaloriesMax = CaloriesMax;
@@ -89,15 +94,137 @@ namespace Website.Pages
             TypeOfItem = Request.Query["TypeOfItem"];
             SearchTerms = Request.Query["SearchTerms"];
 
-            MenuDisplay = Menu.FilterByType(MenuDisplay, TypeOfItem);
-            MenuDisplay = Menu.Search(MenuDisplay, SearchTerms);
-            MenuDisplay = Menu.FilterByPrice(MenuDisplay, PriceMin, PriceMax);
-            MenuDisplay = Menu.FilterByCalories(MenuDisplay, CaloriesMin, CaloriesMax);
+            #endregion
+
+
+            //            MenuDisplay = Menu.FilterByType(MenuDisplay, TypeOfItem);
+            //            MenuDisplay = Menu.Search(MenuDisplay, SearchTerms);
+            //            MenuDisplay = Menu.FilterByPrice(MenuDisplay, PriceMin, PriceMax);
+            //            MenuDisplay = Menu.FilterByCalories(MenuDisplay, CaloriesMin, CaloriesMax);
+
+
+            #region TypeOfItem
+
+            if (TypeOfItem != null && TypeOfItem.Count() != 0)
+            {
+
+                if(TypeOfItem.Contains("Entree") && TypeOfItem.Contains("Side") && TypeOfItem.Contains("Drink"))
+                {
+
+                }
+                else if( TypeOfItem.Contains("Entree") && TypeOfItem.Contains("Side") && !TypeOfItem.Contains("Drink"))
+                {
+                    MenuDisplay = (MenuDisplay.Where(item =>
+                    item as Entree != null ||
+                    item as Side != null
+                    ));
+                }
+                else if (TypeOfItem.Contains("Entree") && !TypeOfItem.Contains("Side") && !TypeOfItem.Contains("Drink"))
+                {
+                    MenuDisplay = (MenuDisplay.Where(item =>
+                    item as Entree != null
+                    ));
+
+                }
+                else if (!TypeOfItem.Contains("Entree") && TypeOfItem.Contains("Side") && !TypeOfItem.Contains("Drink"))
+                {
+                    MenuDisplay = (MenuDisplay.Where(item =>
+                    item as Side != null
+                    ));
+                }
+                else if (!TypeOfItem.Contains("Entree") && !TypeOfItem.Contains("Side") && TypeOfItem.Contains("Drink"))
+                {
+                    MenuDisplay = (MenuDisplay.Where(item =>
+                    item as Drink != null
+                    ));
+
+                }
+                else if (!TypeOfItem.Contains("Entree") && TypeOfItem.Contains("Side") && TypeOfItem.Contains("Drink"))
+                {
+                    MenuDisplay = (MenuDisplay.Where(item =>
+                    item as Side != null ||
+                    item as Drink != null
+                    ));
+                }
+                else if (TypeOfItem.Contains("Entree") && !TypeOfItem.Contains("Side") && TypeOfItem.Contains("Drink"))
+                {
+                    MenuDisplay = (MenuDisplay.Where(item =>
+                    item as Entree != null ||
+                    item as Drink != null
+                    ));
+                }
+
+            }
+            #endregion
+
+            #region Search
+
+            if (SearchTerms != null)
+            {
+
+                MenuDisplay = (MenuDisplay.Where(item =>
+                item.ToString() != null &&
+                item.ToString().Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase)
+                ));
+            }
+
+
+            #endregion
+
+            #region Filter By Price
+
+            if(PriceMin != null || PriceMax != null)
+            {
+                if(PriceMin == null)
+                {
+                    MenuDisplay = MenuDisplay.Where(item =>
+                    item.Price <= PriceMax
+                    );
+                }
+                else if(PriceMax == null)
+                {
+                    MenuDisplay = MenuDisplay.Where(item =>
+                    item.Price >= PriceMin
+                    );
+                }
+                else
+                {
+                    MenuDisplay = MenuDisplay.Where(item =>
+                    item.Price >= PriceMin && item.Price <= PriceMax
+                    );
+                }
+            }
+
+            #endregion
+
+            #region Filter By Calories
+
+            if(CaloriesMin != null || CaloriesMax != null)
+            {
+                if(CaloriesMin == null)
+                {
+                    MenuDisplay = MenuDisplay.Where(item =>
+                    item.Calories < CaloriesMax
+                    );
+                }
+                else if(CaloriesMax == null)
+                {
+                    MenuDisplay = MenuDisplay.Where(item =>
+                    item.Calories >= CaloriesMax
+                    );
+                }
+                else
+                {
+                    MenuDisplay = MenuDisplay.Where(item =>
+                    item.Calories >= CaloriesMin && item.Calories <= CaloriesMax
+                    );
+                }
+            }
+
+            #endregion
 
 
         }
-
-
 
     }
 }

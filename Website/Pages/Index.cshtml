@@ -28,7 +28,7 @@
             @foreach (String type in Menu.TypeOfItem)
             {
                 <label class="m-1">
-                    <input type="checkbox" name="TypeOfItem" value="@type" checked="@Model.TypeOfItem.Contains(type)"/>
+                    <input type="checkbox" name="TypeOfItem" value="@type" checked="@Model.TypeOfItem.Contains(type)" />
                     @type
                 </label>
             }
@@ -41,7 +41,7 @@
             Calories: Between
             <input name="CaloriesMin" type="number" min="0" max="2000" step="0.1" placeholder="min" value="@Model.CaloriesMin" />
             and
-            <input name="CaloriesMax" type="number" min="0" max="2000" step="0.1" placeholder="max" value="@Model.CaloriesMax"/>
+            <input name="CaloriesMax" type="number" min="0" max="2000" step="0.1" placeholder="max" value="@Model.CaloriesMax" />
         </div>
 
         <div class="m-2">
@@ -59,75 +59,75 @@
 
     </form>
 
+</div>
 
-
-    <h3 class="border-bottom p-2 m-3">Entrees</h3>
-
-    <div class="d-flex flex-row flex-wrap">
+<div class="flex-columns">
+    <div>
+        <h3>Entrees</h3>
         @{
             foreach (var item in Model.MenuDisplay)
-
             {
                 var myObject = item as Entree;
 
                 if (myObject != null)
                 {
-                    <div class="menu-item p-3 m-2 border">
-                        <h4>@item</h4> <br />
+                    <div class="menu-item">
+                        <h4>@item</h4>
                         Calories: @item.Calories <br />
-                        Price: @item.Price.ToString("c")<br />
+                        Price: @item.Price.ToString("c") <br />
                     </div>
-
                 }
             }
         }
     </div>
-
-    <h3 class="border-bottom p-2 m-3">Sides</h3>
-
-    <div class="d-flex flex-row flex-wrap">
+    <div>
+        <h3>Sides</h3>
         @{
             foreach (var item in Model.MenuDisplay)
-
             {
                 var myObject = item as Side;
 
                 if (myObject != null)
                 {
-                    <div class="menu-item p-3 m-2 border">
-                        <h4>@item</h4> <br />
+                    <div class="menu-item">
+                        <h4>@item</h4> 
                         Calories: @item.Calories <br />
-                        Price: @item.Price.ToString("c")
+                        Price: @item.Price.ToString("c") <br />
                     </div>
-
                 }
             }
         }
     </div>
+    <div>
+        <h3>Drinks</h3>
 
-    <h3 class="border-bottom p-2 m-3">Drinks</h3>
+        <div class="menu-item">
+            <h4 class="text-center">Soda Flavors</h4>
+            <ul>
+                <li>Cream Soda</li>
+                <li>Orange Soda</li>
+                <li>Sarsparilla</li>
+                <li>Birch Beer</li>
+                <li>Root Beer</li>
+            </ul>
+        </div>
 
-    <div class="d-flex flex-row flex-wrap">
         @{
             foreach (var item in Model.MenuDisplay)
-
             {
                 var myObject = item as Drink;
 
                 if (myObject != null)
                 {
-                    <div class="menu-item p-3 m-2 border">
-                        <h4>@item</h4> <br />
+                    <div class="menu-item">
+                        <h4>@item</h4>
                         Calories: @item.Calories <br />
-                        Price: @item.Price.ToString("c")
+                        Price: @item.Price.ToString("c") <br />
                     </div>
-
                 }
             }
         }
     </div>
-
-
 </div>
 
 
